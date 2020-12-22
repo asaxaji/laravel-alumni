@@ -53,104 +53,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
-                                            </td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
-                                            </td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
-                                            </td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
-                                            </td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
-                                            </td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
-                                            </td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
-                                            </td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
-                                            </td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
-                                            </td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
-                                            </td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
-                                            </td>
-                                            <td>Computer</td>
-                                            <td>2014</td>
-                                            <td>Dhaka</td>
-                                            <td>Student</td>
-                                        </tr>
+                                        @for ($i = 0; $i < 50; $i++)
+                                            <tr>
+                                                <td>
+                                                    <img src="http://placehold.it/500x500" alt="table">Angelina Jolie Voight
+                                                </td>
+                                                <td>Computer</td>
+                                                <td>2014</td>
+                                                <td>Dhaka</td>
+                                                <td>Student</td>
+                                            </tr>
+                                        @endfor
                                     </tbody>
                                 </table>
                             </div>

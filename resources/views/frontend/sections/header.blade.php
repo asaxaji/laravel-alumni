@@ -34,8 +34,8 @@
                         <div class="collapse navbar-collapse" id="menucontent">
                             <ul class="navbar-nav ml-auto">
                                 @foreach (menu('frontend', '_json') as $mk => $mv)
-                                    <li class="nav-item {{ request()->is($mv->url) ? 'active' : '' }}">
-                                        <a class="nav-link" href="{{$mv->url}}" target="{{$mv->target}}">{{$mv->title}}</a>
+                                    <li class="nav-item {{ request()->routeIs($mv->route) ? 'active' : '' }}">
+                                        <a class="nav-link" href="{{route($mv->route)}}" target="{{$mv->target}}">{{$mv->title}}</a>
                                     </li>
                                 @endforeach
                             </ul>

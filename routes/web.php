@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\BlogController;
+use App\Http\Controllers\Frontend\AlumniController;
 use App\Http\Controllers\Frontend\CareerController;
+use App\Http\Controllers\Frontend\FacultyController;
 use App\Http\Controllers\Frontend\EventController;
 use App\Http\Controllers\Frontend\OrganizationController;
 use App\Http\Controllers\Frontend\ContactController;
@@ -23,6 +25,8 @@ Route::get('/welcome', function() { return view('welcome'); });
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::resource('/blog', BlogController::class);
 Route::resource('/career', CareerController::class);
+Route::resource('/alumni', AlumniController::class);
+Route::resource('/faculty', FacultyController::class);
 Route::resource('/event', EventController::class);
 Route::resource('/organization', OrganizationController::class);
 Route::resource('/contact', ContactController::class);
