@@ -15,6 +15,13 @@ class CreateCareersTable extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('company_id')->nullable()->default(null);
+            $table->foreign('company_id')->references('id')->on('companies')->onUpdate('cascade')->onDelete('set null');
+            $table->string('title');
+            $table->string('slug');
+            $table->text('body');
+            $table->boolean('published')->default(true);
+            $table->timestamp('end_at');
             $table->timestamps();
         });
     }

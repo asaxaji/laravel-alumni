@@ -5,18 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Career extends Model
+class Company extends Model
 {
     use HasFactory;
 
     public $timestamps = true;
 
     protected $fillable = [
-        'company_id',
-        'title',
+        'logo',
+        'name',
         'slug',
+        'email',
+        'phone',
+        'address',
+        'gmaps',
         'body',
-        'published',
-        'end_at',
     ];
 }
