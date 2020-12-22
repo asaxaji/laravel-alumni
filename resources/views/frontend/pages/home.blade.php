@@ -55,110 +55,35 @@
                         </div>
                         <div class="upcoming-event-content owl-carousel">
                             <!-- No 1 Event -->
-                            <div class="single-upcoming-event">
-                                <div class="row">
-                                    <div class="col-lg-5">
-                                        <div class="up-event-thumb">
-                                            <img src="http://placehold.it/700x390" class="img-fluid" alt="Upcoming Event">
-                                            <h4 class="up-event-date">It&#x2019;s 27 February 2019</h4>
+                            @foreach ($events as $ek => $ev)
+                                <div class="single-upcoming-event">
+                                    <div class="row">
+                                        <div class="col-lg-5">
+                                            <div class="up-event-thumb">
+                                                <img src="{{asset('storage/faker/'.$ev->image)}}" class="img-fluid" alt="Upcoming Event">
+                                                <h4 class="up-event-date">{{dateFormat($ev->start_at)->format('d M Y')}}</h4>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-lg-7">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <div class="up-event-text">
-                                                    <div class="event-countdown">
-                                                        <div class="event-countdown-counter" data-date="2018/9/10">
+                                        <div class="col-lg-7">
+                                            <div class="display-table">
+                                                <div class="display-table-cell">
+                                                    <div class="up-event-text">
+                                                        <div class="event-countdown">
+                                                            <div class="event-countdown-counter" data-date="{{dateFormat($ev->start_at)->format('Y/m/d')}}"></div>
+                                                            <p>Remaining</p>
                                                         </div>
-                                                        <p>Remaining</p>
+                                                        <h3><a href="{{route('event.show', [$ev->slug])}}">{{$ev->title}}</a></h3>
+                                                        <p>{{$ev->excerpt}}</p>
+                                                        <a href="{{route('event.show', [$ev->slug])}}" class="btn btn-brand btn-brand-dark">join
+                                                            with us</a>
                                                     </div>
-                                                    <h3><a href="single-event.html">We are going to arrange a get
-                                                            together!</a></h3>
-                                                    <p>Hello everybody Lorem ipsum dolor sit amet, consectetur
-                                                        adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                                        dolore magna aliqua. Ut enim and minim veniam, quis nostrud
-                                                        exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                                                    <a href="single-event.html" class="btn btn-brand btn-brand-dark">join
-                                                        with us</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- partial -->
-
-
-                            <!-- No 2 Event -->
-                            <div class="single-upcoming-event">
-                                <div class="row">
-                                    <div class="col-lg-5">
-                                        <div class="up-event-thumb">
-                                            <img src="http://placehold.it/700x390" class="img-fluid" alt="Upcoming Event">
-                                            <h4 class="up-event-date">It&#x2019;s 27 February 2019</h4>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-7">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <div class="up-event-text">
-                                                    <div class="event-countdown">
-                                                        <div class="event-countdown-counter" data-date="2018/9/10">
-                                                        </div>
-                                                        <p>Remaining</p>
-                                                    </div>
-                                                    <h3><a href="single-event.html">We are going to arrange a get
-                                                            together!</a></h3>
-                                                    <p>Hello everybody Lorem ipsum dolor sit amet, consectetur
-                                                        adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                                        dolore magna aliqua. Ut enim and minim veniam, quis nostrud
-                                                        exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                                                    <a href="single-event.html" class="btn btn-brand btn-brand-dark">join
-                                                        with us</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- partial -->
-
-
-                            <!-- No 3 Event -->
-                            <div class="single-upcoming-event">
-                                <div class="row">
-                                    <div class="col-lg-5">
-                                        <div class="up-event-thumb">
-                                            <img src="http://placehold.it/700x390" class="img-fluid" alt="Upcoming Event">
-                                            <h4 class="up-event-date">It&#x2019;s 27 February 2019</h4>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-7">
-                                        <div class="display-table">
-                                            <div class="display-table-cell">
-                                                <div class="up-event-text">
-                                                    <div class="event-countdown">
-                                                        <div class="event-countdown-counter" data-date="2018/9/10">
-                                                        </div>
-                                                        <p>Remaining</p>
-                                                    </div>
-                                                    <h3><a href="single-event.html">We are going to arrange a get
-                                                            together!</a></h3>
-                                                    <p>Hello everybody Lorem ipsum dolor sit amet, consectetur
-                                                        adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                                        dolore magna aliqua. Ut enim and minim veniam, quis nostrud
-                                                        exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                                                    <a href="single-event.html" class="btn btn-brand btn-brand-dark">join
-                                                        with us</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                             <!-- partial -->
                         </div>
                     </div>

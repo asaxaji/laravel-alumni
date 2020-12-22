@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
 use App\Models\Slider;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,8 +18,13 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = Slider::wherePublished(true)->orderByDesc('created_at')->get();
+        $events = Event::wherePublished(true)
+            ->where('start_at', '>=', Carbon::now())
+            ->orderByDesc('created_at')
+            ->get();
         return view('frontend.pages.home', compact([
-            'sliders'
+            'sliders',
+            'events'
         ]));
     }
 
