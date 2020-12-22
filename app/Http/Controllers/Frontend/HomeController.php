@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +15,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend.pages.home');
+        $sliders = Slider::wherePublished(true)->orderByDesc('created_at')->get();
+        return view('frontend.pages.home', compact([
+            'sliders'
+        ]));
     }
 
     /**

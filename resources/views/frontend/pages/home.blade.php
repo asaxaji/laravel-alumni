@@ -5,69 +5,29 @@
     <section id="slider-area">
         <div class="slider-active-wrap owl-carousel text-center text-md-left">
             <!-- Single Slide Item Start -->
-            <div class="single-slide-wrap slide-bg-1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-9">
-                            <div class="slider-content">
-                                <h2>We Are Proud</h2>
-                                <h3>Students of <span>Oxfornt University</span></h3>
-                                <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be
-                                    the need (academic, relocation, career, projects, mentorship, etc. you can ask the
-                                    community and get responses in three.</p>
-                                <div class="slider-btn">
-                                    <a href="#about-area" class="btn btn-brand smooth-scroll">our mission</a>
-                                    <a href="about.html" class="btn btn-brand-rev">our story</a>
+            @foreach ($sliders as $sk => $sv)
+                <div class="single-slide-wrap slide-bg-1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <div class="slider-content">
+                                    <h2>{{$sv->title}}</h2>
+                                    <h3>{{$sv->subtitle}}</h3>
+                                    {{-- <h3>Students of <span>Oxfornt University</span></h3> --}}
+                                    <p>
+                                        {{$sv->excerpt}}
+                                    </p>
+                                    @if (!empty($sv->link))
+                                        <div class="slider-btn">
+                                            <a href="{{$sv->link}}" target="{{isURL($sv->link) ? '_blank' : '_self'}}" class="btn btn-brand smooth-scroll">our mission</a>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Single Slide Item End -->
-
-            <!-- Single Slide Item Start -->
-            <div class="single-slide-wrap slide-bg-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-9">
-                            <div class="slider-content">
-                                <h2>We Are Not Proud</h2>
-                                <h3>Students of <span>Oxfornt University</span></h3>
-                                <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be
-                                    the need (academic, relocation, career, projects, mentorship, etc. you can ask the
-                                    community and get responses in three.</p>
-                                <div class="slider-btn">
-                                    <a href="#" class="btn btn-brand">our mission</a>
-                                    <a href="#" class="btn btn-brand-rev">our story</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Slide Item End -->
-
-            <!-- Single Slide Item Start -->
-            <div class="single-slide-wrap slide-bg-3">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-9">
-                            <div class="slider-content">
-                                <h2>Why Proud for u</h2>
-                                <h3>Students of <span>Oxfornt University</span></h3>
-                                <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be
-                                    the need (academic, relocation, career, projects, mentorship, etc. you can ask the
-                                    community and get responses in three.</p>
-                                <div class="slider-btn">
-                                    <a href="#" class="btn btn-brand">our mission</a>
-                                    <a href="#" class="btn btn-brand-rev">our story</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
             <!-- Single Slide Item End -->
         </div>
 
