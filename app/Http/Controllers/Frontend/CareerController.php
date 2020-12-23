@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Career;
 use Illuminate\Http\Request;
 
 class CareerController extends Controller
@@ -14,7 +15,10 @@ class CareerController extends Controller
      */
     public function index()
     {
-        return view("frontend.pages.career");
+        $careers = Career::with('companyId')->wherePublished(true)->orderByDesc('created_at')->get();
+        return view("frontend.pages.career", compact([
+            'careers'
+        ]));
     }
 
     /**
@@ -46,7 +50,13 @@ class CareerController extends Controller
      */
     public function show($id)
     {
-        return view("frontend.pages.career-detail");
+        $career = Career::with('companyId')
+            ->whereSlug($id)
+            ->orderByDesc('created_at')
+            ->firstOrFail();
+        return view("frontend.pages.career-detail", compact([
+            'career'
+        ]));
     }
 
     /**

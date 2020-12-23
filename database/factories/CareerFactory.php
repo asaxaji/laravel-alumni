@@ -30,6 +30,8 @@ class CareerFactory extends Factory
             'title' => $title,
             'slug' => slugify($title),
             'body' => '<h2>Details all Thing About This Event</h2><p>Aenean viverra rhoncus pede. Phasellus leo dolor, tempus non, auctor endrerit quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum auctor. Sed ngilla mauris sit amet nibhr, tempus non, auctor endrerit quis, nisi.</p>',
+            'city' => $this->faker->city,
+            'country' => $this->faker->country,
             'published' => true,
             'end_at' => Carbon::now()->addDays(rand(10, 20)),
         ];

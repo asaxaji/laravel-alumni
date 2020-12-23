@@ -11,12 +11,21 @@ class Career extends Model
 
     public $timestamps = true;
 
+    protected $dates = ['end_at'];
+
     protected $fillable = [
         'company_id',
         'title',
         'slug',
         'body',
+        'city',
+        'country',
         'published',
         'end_at',
     ];
+
+    function companyId()
+    {
+        return $this->hasOne(Company::class, 'id', 'company_id');
+    }
 }

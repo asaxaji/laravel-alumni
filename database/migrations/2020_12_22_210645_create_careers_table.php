@@ -20,6 +20,8 @@ class CreateCareersTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('body');
+            $table->string('city')->nullable();
+            $table->string('country')->nullable();
             $table->boolean('published')->default(true);
             $table->timestamp('end_at');
             $table->timestamps();

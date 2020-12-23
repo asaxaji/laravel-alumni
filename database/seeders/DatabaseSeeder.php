@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Career;
+use App\Models\Company;
 use App\Models\Event;
 use App\Models\Slider;
 use Illuminate\Database\Seeder;
@@ -17,5 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         // Slider::factory(5)->create();
         // Event::factory(6)->create();
+        // Company::factory(3)->create();
+        // Career::factory(12)->create();
     }
 }
