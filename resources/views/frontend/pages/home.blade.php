@@ -75,8 +75,7 @@
                                                         </div>
                                                         <h3><a href="{{route('event.show', [$ev->slug])}}">{{$ev->title}}</a></h3>
                                                         <p>{{$ev->excerpt}}</p>
-                                                        <a href="{{route('event.show', [$ev->slug])}}" class="btn btn-brand btn-brand-dark">join
-                                                            with us</a>
+                                                        <a href="{{route('event.show', [$ev->slug])}}" class="btn btn-brand btn-brand-dark">Detail</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -101,7 +100,7 @@
                     <div class="col-lg-10 ml-auto">
                         <div class="about-content-wrap">
                             <div class="section-title text-center text-lg-left">
-                                <h2>Our Misssion</h2>
+                                <h2>Tentang Kami</h2>
                             </div>
 
                             <div class="about-thumb">
@@ -269,123 +268,31 @@
             <div class="job-opportunity-wrapper">
                 <div class="row">
                     <!--== Single Job opportunity Start ==-->
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <div class="single-job-opportunity">
-                            <div class="job-opportunity-text">
-                                <div class="job-oppor-logo">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <img src="http://placehold.it/317x410" alt="Job">
+                    @foreach ($careers as $ck => $cv)
+                        <div class="col-lg-4 col-sm-6 text-center">
+                            <div class="single-job-opportunity">
+                                <div class="job-opportunity-text">
+                                    <div class="job-oppor-logo">
+                                        <div class="display-table">
+                                            <div class="display-table-cell">
+                                                <img src="{{('storage/faker/'.$cv->companyId->logo)}}" alt="{{$cv->title}}" title="{{$cv->companyId->name}}">
+                                            </div>
                                         </div>
                                     </div>
+                                    <h3><a href="#">Loker Posisi {{$cv->title}}</a></h3>
+                                    <p><b>PT. {{$cv->companyId->name}}</b></p>
+                                    <p>
+                                        {{$cv->city}}, {{$cv->country}}
+                                    </p>
                                 </div>
-                                <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                                <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                    procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
+                                @if ($cv->end_at->gt(now()))
+                                    <a href="{{route('career.show', [$cv->slug])}}" class="btn btn-job">Detail</a>
+                                @else
+                                    <a href="#" class="btn btn-job btn-expired disabled">Expired</a>
+                                @endif
                             </div>
-                            <a href="#" class="btn btn-job">Apply now</a>
                         </div>
-                    </div>
-                    <!--== Single Job opportunity End ==-->
-
-                    <!--== Single Job opportunity Start ==-->
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <div class="single-job-opportunity">
-                            <div class="job-opportunity-text">
-                                <div class="job-oppor-logo">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <img src="http://placehold.it/349x248" alt="Job">
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3><a href="#">Product Owner (m/f) for our Charter Business</a></h3>
-                                <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                    procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                            </div>
-                            <a href="#" class="btn btn-job">Apply now</a>
-                        </div>
-                    </div>
-                    <!--== Single Job opportunity End ==-->
-
-                    <!--== Single Job opportunity Start ==-->
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <div class="single-job-opportunity">
-                            <div class="job-opportunity-text">
-                                <div class="job-oppor-logo">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <img src="http://placehold.it/317x410" alt="Job">
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3><a href="#">Backend Developer (Java) (m/f) wanted for leading</a></h3>
-                                <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                    procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                            </div>
-                            <a href="#" class="btn btn-job btn-expired disabled">Expired</a>
-                        </div>
-                    </div>
-                    <!--== Single Job opportunity End ==-->
-
-                    <!--== Single Job opportunity Start ==-->
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <div class="single-job-opportunity">
-                            <div class="job-opportunity-text">
-                                <div class="job-oppor-logo">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <img src="http://placehold.it/349x248" alt="Job">
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3><a href="#">API Architect and Lead - Python, SQLAlchemy, GraphQL</a></h3>
-                                <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                    procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                            </div>
-                            <a href="#" class="btn btn-job">Apply now</a>
-                        </div>
-                    </div>
-                    <!--== Single Job opportunity End ==-->
-
-                    <!--== Single Job opportunity Start ==-->
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <div class="single-job-opportunity">
-                            <div class="job-opportunity-text">
-                                <div class="job-oppor-logo">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <img src="http://placehold.it/314x234" alt="Job">
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3><a href="#">Remotely - Javascript Developer Node.js</a></h3>
-                                <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                    procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                            </div>
-                            <a href="#" class="btn btn-job btn-expired disabled">Expired</a>
-                        </div>
-                    </div>
-                    <!--== Single Job opportunity End ==-->
-
-                    <!--== Single Job opportunity Start ==-->
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <div class="single-job-opportunity">
-                            <div class="job-opportunity-text">
-                                <div class="job-oppor-logo">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <img src="http://placehold.it/226x224" alt="Job">
-                                        </div>
-                                    </div>
-                                </div>
-                                <h3><a href="#">Five Years Experience Data Center Specialist Needed</a></h3>
-                                <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est etiam
-                                    procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                            </div>
-                            <a href="#" class="btn btn-job">Apply now</a>
-                        </div>
-                    </div>
+                    @endforeach
                     <!--== Single Job opportunity End ==-->
                 </div>
 

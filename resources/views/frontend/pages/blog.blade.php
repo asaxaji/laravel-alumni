@@ -7,9 +7,10 @@
             <div class="row">
                 <div class="col-lg-8 m-auto text-center">
                     <div class="page-title-content">
-                        <h1 class="h2">Blog List</h1>
-                        <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the
-                            need</p>
+                        <h1 class="h2">List Blog</h1>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam non perspiciatis mollitia obcaecati rem natus!
+                        </p>
                         <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">Let&apos;s See</a>
                     </div>
                 </div>
@@ -24,223 +25,45 @@
             <div class="container">
                 <div class="row">
                     <!-- Blog content Area Start -->
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <div class="blog-page-contant-start">
                             <div class="row">
                                 <!--== Single Blog Post start ==-->
-                                <div class="col-lg-6 col-md-6">
-                                    <article class="single-blog-post">
-                                        <figure class="blog-thumb">
-                                            <div class="blog-thumbnail">
-                                                <img src="http://placehold.it/700x353" alt="Blog" class="img-fluid">
-                                            </div>
-                                            <figcaption class="blog-meta clearfix">
-                                                <a href="single-blog.html" class="author">
-                                                    <div class="author-pic">
-                                                        <img src="http://placehold.it/200x200" alt="Author">
-                                                    </div>
-                                                    <div class="author-info">
-                                                        <h5>Daney williams</h5>
-                                                        <p>2 hours Ago</p>
-                                                    </div>
-                                                </a>
-                                                <div class="like-comm pull-right">
-                                                    <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                    <a href="#"><i class="fa fa-heart-o"></i>12</a>
+                                @for ($i = 0; $i < 15; $i++)
+                                    <div class="col-lg-4 col-md-4 my-4">
+                                        <article class="single-blog-post">
+                                            <figure class="blog-thumb">
+                                                <div class="blog-thumbnail">
+                                                    <img src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg" alt="Blog" class="img-fluid">
                                                 </div>
-                                            </figcaption>
-                                        </figure>
+                                                <figcaption class="blog-meta clearfix">
+                                                    <a href="{{route('blog.show', ['detail'])}}" class="author">
+                                                        <div class="author-pic">
+                                                            <img src="{{asset('storage/users/default.png')}}" alt="Author">
+                                                        </div>
+                                                        <div class="author-info">
+                                                            <h5>Daney williams</h5>
+                                                            <p>2 hours Ago</p>
+                                                        </div>
+                                                    </a>
+                                                    <div class="like-comm pull-right">
+                                                        <a href="#"><i class="fa fa-comment-o"></i>77</a>
+                                                        <a href="#"><i class="fa fa-heart-o"></i>12</a>
+                                                    </div>
+                                                </figcaption>
+                                            </figure>
 
-                                        <div class="blog-content">
-                                            <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                    will be a.....</a></h3>
-                                            <p>This is a big project of our company, we are happy to completed this type
-                                                projec which are
-                                                get world famous award</p>
-                                            <a href="single-blog.html" class="btn btn-brand">More</a>
-                                        </div>
-                                    </article>
-                                </div>
-                                <!--== Single Blog Post End ==-->
-
-                                <!--== Single Blog Post start ==-->
-                                <div class="col-lg-6 col-md-6">
-                                    <article class="single-blog-post">
-                                        <figure class="blog-thumb">
-                                            <div class="blog-thumbnail">
-                                                <img src="http://placehold.it/700x352" alt="Blog" class="img-fluid">
+                                            <div class="blog-content">
+                                                <h3><a href="{{route('blog.show', ['detail'])}}">Recently we create a maassive project that
+                                                        will be a.....</a></h3>
+                                                <p>This is a big project of our company, we are happy to completed this type
+                                                    projec which are
+                                                    get world famous award</p>
+                                                <a href="{{route('blog.show', ['detail'])}}" class="btn btn-brand">More</a>
                                             </div>
-                                            <figcaption class="blog-meta clearfix">
-                                                <a href="single-blog.html" class="author">
-                                                    <div class="author-pic">
-                                                        <img src="http://placehold.it/200x200" alt="Author">
-                                                    </div>
-                                                    <div class="author-info">
-                                                        <h5>Daney williams</h5>
-                                                        <p>2 hours Ago</p>
-                                                    </div>
-                                                </a>
-                                                <div class="like-comm pull-right">
-                                                    <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                    <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-
-                                        <div class="blog-content">
-                                            <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                    will be a.....</a></h3>
-                                            <p>This is a big project of our company, we are happy to completed this type
-                                                projec which are
-                                                get world famous award</p>
-                                            <a href="single-blog.html" class="btn btn-brand">More</a>
-                                        </div>
-                                    </article>
-                                </div>
-                                <!--== Single Blog Post End ==-->
-
-                                <!--== Single Blog Post start ==-->
-                                <div class="col-lg-6 col-md-6">
-                                    <article class="single-blog-post">
-                                        <figure class="blog-thumb">
-                                            <div class="blog-thumbnail">
-                                                <img src="http://placehold.it/700x352" alt="Blog" class="img-fluid">
-                                            </div>
-                                            <figcaption class="blog-meta clearfix">
-                                                <a href="single-blog.html" class="author">
-                                                    <div class="author-pic">
-                                                        <img src="http://placehold.it/200x200" alt="Author">
-                                                    </div>
-                                                    <div class="author-info">
-                                                        <h5>Daney williams</h5>
-                                                        <p>2 hours Ago</p>
-                                                    </div>
-                                                </a>
-                                                <div class="like-comm pull-right">
-                                                    <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                    <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-
-                                        <div class="blog-content">
-                                            <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                    will be a.....</a></h3>
-                                            <p>This is a big project of our company, we are happy to completed this type
-                                                projec which are
-                                                get world famous award</p>
-                                            <a href="single-blog.html" class="btn btn-brand">More</a>
-                                        </div>
-                                    </article>
-                                </div>
-                                <!--== Single Blog Post End ==-->
-
-                                <!--== Single Blog Post start ==-->
-                                <div class="col-lg-6 col-md-6">
-                                    <article class="single-blog-post">
-                                        <figure class="blog-thumb">
-                                            <div class="blog-thumbnail">
-                                                <img src="http://placehold.it/700x353" alt="Blog" class="img-fluid">
-                                            </div>
-                                            <figcaption class="blog-meta clearfix">
-                                                <a href="single-blog.html" class="author">
-                                                    <div class="author-pic">
-                                                        <img src="http://placehold.it/200x200" alt="Author">
-                                                    </div>
-                                                    <div class="author-info">
-                                                        <h5>Daney williams</h5>
-                                                        <p>2 hours Ago</p>
-                                                    </div>
-                                                </a>
-                                                <div class="like-comm pull-right">
-                                                    <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                    <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-
-                                        <div class="blog-content">
-                                            <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                    will be a.....</a></h3>
-                                            <p>This is a big project of our company, we are happy to completed this type
-                                                projec which are
-                                                get world famous award</p>
-                                            <a href="single-blog.html" class="btn btn-brand">More</a>
-                                        </div>
-                                    </article>
-                                </div>
-                                <!--== Single Blog Post End ==-->
-
-                                <!--== Single Blog Post start ==-->
-                                <div class="col-lg-6 col-md-6">
-                                    <article class="single-blog-post">
-                                        <figure class="blog-thumb">
-                                            <div class="blog-thumbnail">
-                                                <img src="http://placehold.it/700x352" alt="Blog" class="img-fluid">
-                                            </div>
-                                            <figcaption class="blog-meta clearfix">
-                                                <a href="single-blog.html" class="author">
-                                                    <div class="author-pic">
-                                                        <img src="http://placehold.it/200x200" alt="Author">
-                                                    </div>
-                                                    <div class="author-info">
-                                                        <h5>Daney williams</h5>
-                                                        <p>2 hours Ago</p>
-                                                    </div>
-                                                </a>
-                                                <div class="like-comm pull-right">
-                                                    <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                    <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-
-                                        <div class="blog-content">
-                                            <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                    will be a.....</a></h3>
-                                            <p>This is a big project of our company, we are happy to completed this type
-                                                projec which are
-                                                get world famous award</p>
-                                            <a href="single-blog.html" class="btn btn-brand">More</a>
-                                        </div>
-                                    </article>
-                                </div>
-                                <!--== Single Blog Post End ==-->
-
-                                <!--== Single Blog Post start ==-->
-                                <div class="col-lg-6 col-md-6">
-                                    <article class="single-blog-post">
-                                        <figure class="blog-thumb">
-                                            <div class="blog-thumbnail">
-                                                <img src="http://placehold.it/700x352" alt="Blog" class="img-fluid">
-                                            </div>
-                                            <figcaption class="blog-meta clearfix">
-                                                <a href="single-blog.html" class="author">
-                                                    <div class="author-pic">
-                                                        <img src="http://placehold.it/200x200" alt="Author">
-                                                    </div>
-                                                    <div class="author-info">
-                                                        <h5>Daney williams</h5>
-                                                        <p>2 hours Ago</p>
-                                                    </div>
-                                                </a>
-                                                <div class="like-comm pull-right">
-                                                    <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                    <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-
-                                        <div class="blog-content">
-                                            <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                    will be a.....</a></h3>
-                                            <p>This is a big project of our company, we are happy to completed this type
-                                                projec which are
-                                                get world famous award</p>
-                                            <a href="single-blog.html" class="btn btn-brand">More</a>
-                                        </div>
-                                    </article>
-                                </div>
+                                        </article>
+                                    </div>
+                                @endfor
                                 <!--== Single Blog Post End ==-->
                             </div>
 
@@ -268,59 +91,6 @@
                         </div>
                     </div>
                     <!-- Blog content Area End -->
-
-                    <!-- Sidebar Area Start -->
-                    <div class="col-lg-4 order-first order-lg-last">
-
-                        <div class="sidebar-area-wrap">
-                            <!-- Single Sidebar Start -->
-                            <div class="single-sidebar-wrap">
-                                <div class="brand-search-form">
-                                    <form action="index.html">
-                                        <input type="search" placeholder="Type and hit here">
-                                        <button type="button"><i class="fa fa-search"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- Single Sidebar End -->
-
-                            <!-- Single Sidebar Start -->
-                            <div class="single-sidebar-wrap">
-                                <h4 class="sidebar-title">Categories</h4>
-                                <div class="sidebar-body">
-                                    <ul class="brand-unorderlist">
-                                        <li><a href="#">Scholership</a></li>
-                                        <li><a href="#">Alumni</a></li>
-                                        <li><a href="#">Events</a></li>
-                                        <li><a href="#">Member</a></li>
-                                        <li><a href="#">Tour</a></li>
-                                        <li><a href="#">Current Student</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Single Sidebar End -->
-
-                            <!-- Single Sidebar Start -->
-                            <div class="single-sidebar-wrap d-none d-lg-block">
-                                <h4 class="sidebar-title">Popular Tags</h4>
-                                <div class="sidebar-body">
-                                    <div class="tags">
-                                        <a href="#">Bootstrap</a>
-                                        <a href="#">Design</a>
-                                        <a href="#">web</a>
-                                        <a class="active" href="#">custom</a>
-                                        <a href="#">wordpres</a>
-                                        <a href="#">Art</a>
-                                        <a href="#">our team</a>
-                                        <a href="#">Classic</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Sidebar End -->
-                        </div>
-                    </div>
-                    <!-- Sidebar Area End -->
                 </div>
             </div>
         </div>

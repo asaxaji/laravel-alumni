@@ -24,11 +24,11 @@
             <div class="container">
                 <div class="row">
                     <!-- Blog content Area Start -->
-                    <div class="col-lg-8">
+                    <div class="col-lg-10 m-auto">
                         <article class="single-blog-content-wrap">
                             <header class="article-head">
                                 <div class="single-blog-thumb">
-                                    <img src="http://placehold.it/700x353" class="img-fluid" alt="Blog">
+                                    <img src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg" class="img-fluid" alt="Blog">
                                 </div>
                                 <div class="single-blog-meta">
                                     <h2>Awesome Article for Memory of Our Campus Life</h2>
@@ -53,7 +53,7 @@
                                     pharetra, dui mi dir ssim tortor, sit amet ntum mi ligula sit amet augue.
                                     Pellentesqs
                                     placerat. </p>
-                                <img src="http://placehold.it/1440x810" class="img-fluid" alt="Blog">
+                                <img src="https://images.pexels.com/photos/3784567/pexels-photo-3784567.jpeg" class="img-fluid" alt="Blog">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <h5>The Guest Series</h5>
@@ -73,6 +73,7 @@
                                     varius ultrices massa at faucibus.
                                 </blockquote>
                             </section>
+
                             <footer class="post-share">
                                 <div class="row no-gutters ">
                                     <div class="col-8">
@@ -95,59 +96,6 @@
                         </article>
                     </div>
                     <!-- Blog content Area End -->
-
-                    <!-- Sidebar Area Start -->
-                    <div class="col-lg-4 order-first order-lg-last">
-
-                        <div class="sidebar-area-wrap">
-                            <!-- Single Sidebar Start -->
-                            <div class="single-sidebar-wrap">
-                                <div class="brand-search-form">
-                                    <form action="index.html">
-                                        <input type="search" placeholder="Type and hit here">
-                                        <button type="button"><i class="fa fa-search"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- Single Sidebar End -->
-
-                            <!-- Single Sidebar Start -->
-                            <div class="single-sidebar-wrap">
-                                <h4 class="sidebar-title">Categories</h4>
-                                <div class="sidebar-body">
-                                    <ul class="brand-unorderlist">
-                                        <li><a href="#">Scholership</a></li>
-                                        <li><a href="#">Alumni</a></li>
-                                        <li><a href="#">Events</a></li>
-                                        <li><a href="#">Member</a></li>
-                                        <li><a href="#">Tour</a></li>
-                                        <li><a href="#">Current Student</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Single Sidebar End -->
-
-                            <!-- Single Sidebar Start -->
-                            <div class="single-sidebar-wrap d-none d-lg-block">
-                                <h4 class="sidebar-title">Popular Tags</h4>
-                                <div class="sidebar-body">
-                                    <div class="tags">
-                                        <a href="#">Bootstrap</a>
-                                        <a href="#">Design</a>
-                                        <a href="#">web</a>
-                                        <a class="active" href="#">custom</a>
-                                        <a href="#">wordpres</a>
-                                        <a href="#">Art</a>
-                                        <a href="#">our team</a>
-                                        <a href="#">Classic</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Sidebar End -->
-                        </div>
-                    </div>
-                    <!-- Sidebar Area End -->
                 </div>
             </div>
         </div>

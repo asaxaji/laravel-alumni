@@ -71,185 +71,31 @@
 
                     <div class="job-opportunity-wrapper">
                         <div class="row">
-                            <!--== Single Job opportunity Start ==-->
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <div class="single-job-opportunity">
-                                    <div class="job-opportunity-text">
-                                        <div class="job-oppor-logo">
-                                            <div class="display-table">
-                                                <div class="display-table-cell">
-                                                    <img src="http://placehold.it/317x410" alt="Job">
+                            @foreach ($careers as $ck => $cv)
+                                <div class="col-lg-4 col-sm-6 text-center">
+                                    <div class="single-job-opportunity">
+                                        <div class="job-opportunity-text">
+                                            <div class="job-oppor-logo">
+                                                <div class="display-table">
+                                                    <div class="display-table-cell">
+                                                        <img src="{{('storage/faker/'.$cv->companyId->logo)}}" alt="{{$cv->title}}" title="{{$cv->companyId->name}}">
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <h3><a href="#">Loker Posisi {{$cv->title}}</a></h3>
+                                            <p><b>PT. {{$cv->companyId->name}}</b></p>
+                                            <p>
+                                                {{$cv->city}}, {{$cv->country}}
+                                            </p>
                                         </div>
-                                        <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                                        <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est
-                                            etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
+                                        @if ($cv->end_at->gt(now()))
+                                            <a href="{{route('career.show', [$cv->slug])}}" class="btn btn-job">Detail</a>
+                                        @else
+                                            <a href="#" class="btn btn-job btn-expired disabled">Expired</a>
+                                        @endif
                                     </div>
-                                    <a href="#" class="btn btn-job">Apply now</a>
                                 </div>
-                            </div>
-                            <!--== Single Job opportunity End ==-->
-
-                            <!--== Single Job opportunity Start ==-->
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <div class="single-job-opportunity">
-                                    <div class="job-opportunity-text">
-                                        <div class="job-oppor-logo">
-                                            <div class="display-table">
-                                                <div class="display-table-cell">
-                                                    <img src="http://placehold.it/349x248" alt="Job">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                                        <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est
-                                            etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                                    </div>
-                                    <a href="#" class="btn btn-job">Apply now</a>
-                                </div>
-                            </div>
-                            <!--== Single Job opportunity End ==-->
-
-                            <!--== Single Job opportunity Start ==-->
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <div class="single-job-opportunity">
-                                    <div class="job-opportunity-text">
-                                        <div class="job-oppor-logo">
-                                            <div class="display-table">
-                                                <div class="display-table-cell">
-                                                    <img src="http://placehold.it/317x410" alt="Job">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                                        <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est
-                                            etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                                    </div>
-                                    <a href="#" class="btn btn-job btn-expired disabled">Expired</a>
-                                </div>
-                            </div>
-                            <!--== Single Job opportunity End ==-->
-
-                            <!--== Single Job opportunity Start ==-->
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <div class="single-job-opportunity">
-                                    <div class="job-opportunity-text">
-                                        <div class="job-oppor-logo">
-                                            <div class="display-table">
-                                                <div class="display-table-cell">
-                                                    <img src="http://placehold.it/349x248" alt="Job">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                                        <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est
-                                            etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                                    </div>
-                                    <a href="#" class="btn btn-job">Apply now</a>
-                                </div>
-                            </div>
-                            <!--== Single Job opportunity End ==-->
-
-                            <!--== Single Job opportunity Start ==-->
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <div class="single-job-opportunity">
-                                    <div class="job-opportunity-text">
-                                        <div class="job-oppor-logo">
-                                            <div class="display-table">
-                                                <div class="display-table-cell">
-                                                    <img src="http://placehold.it/314x234" alt="Job">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                                        <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est
-                                            etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                                    </div>
-                                    <a href="#" class="btn btn-job btn-expired disabled">Expired</a>
-                                </div>
-                            </div>
-                            <!--== Single Job opportunity End ==-->
-
-                            <!--== Single Job opportunity Start ==-->
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <div class="single-job-opportunity">
-                                    <div class="job-opportunity-text">
-                                        <div class="job-oppor-logo">
-                                            <div class="display-table">
-                                                <div class="display-table-cell">
-                                                    <img src="http://placehold.it/226x224" alt="Job">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                                        <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est
-                                            etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                                    </div>
-                                    <a href="#" class="btn btn-job">Apply now</a>
-                                </div>
-                            </div>
-                            <!--== Single Job opportunity End ==-->
-
-                            <!--== Single Job opportunity Start ==-->
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <div class="single-job-opportunity">
-                                    <div class="job-opportunity-text">
-                                        <div class="job-oppor-logo">
-                                            <div class="display-table">
-                                                <div class="display-table-cell">
-                                                    <img src="http://placehold.it/349x248" alt="Job">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                                        <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est
-                                            etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                                    </div>
-                                    <a href="#" class="btn btn-job">Apply now</a>
-                                </div>
-                            </div>
-                            <!--== Single Job opportunity End ==-->
-
-                            <!--== Single Job opportunity Start ==-->
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <div class="single-job-opportunity">
-                                    <div class="job-opportunity-text">
-                                        <div class="job-oppor-logo">
-                                            <div class="display-table">
-                                                <div class="display-table-cell">
-                                                    <img src="http://placehold.it/314x234" alt="Job">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                                        <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est
-                                            etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                                    </div>
-                                    <a href="#" class="btn btn-job btn-expired disabled">Expired</a>
-                                </div>
-                            </div>
-                            <!--== Single Job opportunity End ==-->
-
-                            <!--== Single Job opportunity Start ==-->
-                            <div class="col-lg-4 col-sm-6 text-center">
-                                <div class="single-job-opportunity">
-                                    <div class="job-opportunity-text">
-                                        <div class="job-oppor-logo">
-                                            <div class="display-table">
-                                                <div class="display-table-cell">
-                                                    <img src="http://placehold.it/226x224" alt="Job">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h3><a href="#">Urgently Need Five Data Center Specialist</a></h3>
-                                        <p>Claritas est etiam procsus dymicus, qui sequitur mutationem Claritas est
-                                            etiam procsus est etiam procsus dymicus.<a href="#">[...]</a></p>
-                                    </div>
-                                    <a href="#" class="btn btn-job">Apply now</a>
-                                </div>
-                            </div>
-                            <!--== Single Job opportunity End ==-->
+                            @endforeach
                         </div>
 
                         <!-- Pagination Start -->

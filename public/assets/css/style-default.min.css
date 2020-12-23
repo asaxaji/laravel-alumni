@@ -554,6 +554,31 @@ textarea.form-control {
   position: relative;
 }
 
+.career-unorderlist li {
+  border-bottom: 1px solid #b4b4b4;
+  padding: 8px 0 8px 10px;
+}
+
+.career-unorderlist li a:hover {
+  color: #2f4da1;
+}
+
+.career-unorderlist li a {
+  text-transform: capitalize;
+  color: #3a3b3c;
+  font-size: 1.4rem;
+  line-height: 2.2399999999999998rem;
+  font-weight: 500;
+  -moz-opacity: .8;
+  -khtml-opacity: .8;
+  -webkit-opacity: .8;
+  opacity: .8;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+  filter: alpha(opacity=80);
+  transition: all .4s ease-out;
+  position: relative;
+}
+
 .brand-unorderlist li a:hover {
   -moz-opacity: 1;
   -khtml-opacity: 1;
@@ -4606,4 +4631,27 @@ blockquote:before {
 
 .cbx-list-yellow {
   background: #e67e22;
+}
+
+a.faculty-list {
+  color: #000;
+}
+
+a.faculty-list:hover {
+  color: #3b60c9;
+}
+
+img.img-circles {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #5481ff;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+head.detail-alumni {
+  border-bottom: 1px solid black;
 }

@@ -2,7 +2,7 @@
 
 @section('views')
     <!--== Page Title Area Start ==-->
-    <section id="page-title-area">
+    {{-- <section id="page-title-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 m-auto text-center">
@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--== Page Title Area End ==-->
 
     <!--== Blog Page Content Start ==-->
@@ -24,17 +24,14 @@
             <div class="container">
                 <div class="row">
                     <!-- Blog content Area Start -->
-                    <div class="col-lg-8">
+                    <div class="col-lg-10 m-auto">
                         <article class="single-blog-content-wrap">
                             <header class="article-head">
                                 <div class="single-blog-thumb">
-                                    <img src="http://placehold.it/700x353" class="img-fluid" alt="Blog">
+                                    <img src="https://bkpsdm.bandaacehkota.go.id/site/wp-content/uploads/2020/05/Struktur-Organisasi-Badan-Kepegawaian-dan-Pengembangan-Sumber-Daya-Manusia-Kota-Banda-Aceh.png" class="img-fluid img-zoomify" alt="Blog">
                                 </div>
                                 <div class="single-blog-meta">
-                                    <h2>Awesome Article for Memory of Our Campus Life</h2>
-                                    <div class="posting-info">
-                                        <a href="#">23 May 2017</a> &#x2022; Posted by: <a href="#">Admin</a>
-                                    </div>
+                                    <h2><b>Fakultas Detail</b></h2>
                                 </div>
                             </header>
                             <section class="blog-details">
@@ -53,104 +50,26 @@
                                     pharetra, dui mi dir ssim tortor, sit amet ntum mi ligula sit amet augue.
                                     Pellentesqs
                                     placerat. </p>
-                                <img src="http://placehold.it/1440x810" class="img-fluid" alt="Blog">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <h5>The Guest Series</h5>
-                                        <p> Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum.
-                                            Aliquam
-                                            non tidunt urna. Integer tincidunt nec nisl vitae Proin sed ultrices erat.
-                                        </p>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <h5>How and why</h5>
-                                        <p>Aenean dignissim, orci sed faucibus nissim tortor, sit amet condimentum mi
-                                            ligula sit amet augue. </p>
-                                    </div>
-                                </div>
-                                <blockquote class="blockquote">
-                                    Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat. Praesent
-                                    varius ultrices massa at faucibus.
-                                </blockquote>
                             </section>
-                            <footer class="post-share">
-                                <div class="row no-gutters ">
-                                    <div class="col-8">
-                                        <div class="shareonsocial">
-                                            <span>Share:</span>
-                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa fa-vimeo"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <div class="post-like-comm">
-                                            <a href="#"><i class="fa fa-thumbs-o-up"></i>20</a>
-                                            <a href="#"><i class="fa fa-comment-o"></i>15</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </footer>
                         </article>
                     </div>
                     <!-- Blog content Area End -->
-
-                    <!-- Sidebar Area Start -->
-                    <div class="col-lg-4 order-first order-lg-last">
-
-                        <div class="sidebar-area-wrap">
-                            <!-- Single Sidebar Start -->
-                            <div class="single-sidebar-wrap">
-                                <div class="brand-search-form">
-                                    <form action="index.html">
-                                        <input type="search" placeholder="Type and hit here">
-                                        <button type="button"><i class="fa fa-search"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- Single Sidebar End -->
-
-                            <!-- Single Sidebar Start -->
-                            <div class="single-sidebar-wrap">
-                                <h4 class="sidebar-title">Categories</h4>
-                                <div class="sidebar-body">
-                                    <ul class="brand-unorderlist">
-                                        <li><a href="#">Scholership</a></li>
-                                        <li><a href="#">Alumni</a></li>
-                                        <li><a href="#">Events</a></li>
-                                        <li><a href="#">Member</a></li>
-                                        <li><a href="#">Tour</a></li>
-                                        <li><a href="#">Current Student</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Single Sidebar End -->
-
-                            <!-- Single Sidebar Start -->
-                            <div class="single-sidebar-wrap d-none d-lg-block">
-                                <h4 class="sidebar-title">Popular Tags</h4>
-                                <div class="sidebar-body">
-                                    <div class="tags">
-                                        <a href="#">Bootstrap</a>
-                                        <a href="#">Design</a>
-                                        <a href="#">web</a>
-                                        <a class="active" href="#">custom</a>
-                                        <a href="#">wordpres</a>
-                                        <a href="#">Art</a>
-                                        <a href="#">our team</a>
-                                        <a href="#">Classic</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Sidebar End -->
-                        </div>
-                    </div>
-                    <!-- Sidebar Area End -->
                 </div>
             </div>
         </div>
     </div>
     <!--== Blog Page Content End ==-->
+@endsection
+
+@section('headers')
+    <link rel="stylesheet" href="{{asset('assets/vendor/zoomify/zoomify.css')}}">
+@endsection
+
+@section('scripts')
+    <script src="{{asset('assets/vendor/zoomify/zoomify.js')}}"></script>
+    <script>
+        $(function(){
+            $('img.img-zoomify').zoomify();
+        }(window.jQuery))
+    </script>
 @endsection

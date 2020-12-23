@@ -68,6 +68,8 @@
     <script src="assets/vendor/css3-mediaqueries-js/css3-mediaqueries.js"></script>
     <![endif]-->
 
+    @yield('headers')
+
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendor/navbar/bootstrap-4-navbar.css')}}">
@@ -167,6 +169,8 @@
 
     <!-- custom js: main custom theme js file  -->
     <script src="{{asset('assets/js/theme.min.js')}}"></script>
+
+    @yield('scripts')
 
     <!-- custom js: custom js file is added for easy custom js code  -->
     <script src="{{asset('assets/js/custom.js')}}"></script>

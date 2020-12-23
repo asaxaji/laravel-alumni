@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Career;
 use App\Models\Event;
 use App\Models\Slider;
 use Carbon\Carbon;
@@ -22,9 +23,11 @@ class HomeController extends Controller
             ->where('start_at', '>=', Carbon::now())
             ->orderByDesc('created_at')
             ->get();
+        $careers = Career::with('companyId')->wherePublished(true)->orderByDesc('created_at')->get();
         return view('frontend.pages.home', compact([
             'sliders',
-            'events'
+            'events',
+            'careers'
         ]));
     }
 
