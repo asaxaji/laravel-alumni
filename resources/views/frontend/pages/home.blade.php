@@ -187,70 +187,6 @@
     </section>
     <!--== Our Responsibility Area End ==-->
 
-    <!--== FunFact Area Start ==-->
-    <section id="funfact-area">
-        <div class="container-fluid">
-            <div class="row text-center">
-                <!--== Single FunFact Start ==-->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-funfact-wrap">
-                        <div class="funfact-icon">
-                            <img src="{{asset('assets/img/fun-fact/user.svg')}}" alt="Funfact">
-                        </div>
-                        <div class="funfact-info">
-                            <h5 class="funfact-count">4025</h5>
-                            <p>Members</p>
-                        </div>
-                    </div>
-                </div>
-                <!--== Single FunFact End ==-->
-
-                <!--== Single FunFact Start ==-->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-funfact-wrap">
-                        <div class="funfact-icon">
-                            <img src="{{asset('assets/img/fun-fact/picture.svg')}}" alt="Funfact">
-                        </div>
-                        <div class="funfact-info">
-                            <h5 class="funfact-count">8725</h5>
-                            <p>Photos</p>
-                        </div>
-                    </div>
-                </div>
-                <!--== Single FunFact End ==-->
-
-                <!--== Single FunFact Start ==-->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-funfact-wrap">
-                        <div class="funfact-icon">
-                            <img src="{{asset('assets/img/fun-fact/event.svg')}}" alt="Funfact">
-                        </div>
-                        <div class="funfact-info">
-                            <h5><span class="funfact-count">231</span>+</h5>
-                            <p>Events</p>
-                        </div>
-                    </div>
-                </div>
-                <!--== Single FunFact End ==-->
-
-                <!--== Single FunFact Start ==-->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-funfact-wrap">
-                        <div class="funfact-icon">
-                            <img src="{{asset('assets/img/fun-fact/medal.svg')}}" alt="Funfact">
-                        </div>
-                        <div class="funfact-info">
-                            <h5><span class="funfact-count">32</span>+</h5>
-                            <p>Awards</p>
-                        </div>
-                    </div>
-                </div>
-                <!--== Single FunFact End ==-->
-            </div>
-        </div>
-    </section>
-    <!--== FunFact Area End ==-->
-
     <!--== Job Opportunity Area Start ==-->
     <section id="job-opportunity" class="section-padding">
         <div class="container">
@@ -459,24 +395,6 @@
     </section>
     <!--== Gallery Area Start ==-->
 
-    <!--== Scholership Promo Area Start ==-->
-    <section id="scholership-promo">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="scholership-promo-text">
-                        <h2>Demo University Provide <span>Scholarship</span> For Talented Student!</h2>
-                        <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the
-                            need academic, relocation, career, projects, mentorship, etc you can ask the community and
-                            get </p>
-                        <a href="#" class="btn btn-brand">Apply Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--== Scholership Promo Area End ==-->
-
     <!--== Blog Area Start ==-->
     <section id="blog-area" class="section-padding">
         <div class="container">
@@ -533,4 +451,68 @@
         </div>
     </section>
     <!--== Blog Area EndBlog ==-->
+
+    <!--== FunFact Area Start ==-->
+    <section id="funfact-area">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <!--== Single FunFact Start ==-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-funfact-wrap">
+                        <div class="funfact-icon">
+                            <img src="{{asset('assets/img/fun-fact/user.svg')}}" alt="Funfact">
+                        </div>
+                        <div class="funfact-info">
+                            <h5 class="funfact-count">4025</h5>
+                            <p>Members</p>
+                        </div>
+                    </div>
+                </div>
+                <!--== Single FunFact End ==-->
+
+                <!--== Single FunFact Start ==-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-funfact-wrap">
+                        <div class="funfact-icon">
+                            <img src="{{asset('assets/img/fun-fact/picture.svg')}}" alt="Funfact">
+                        </div>
+                        <div class="funfact-info">
+                            <h5 class="funfact-count">8725</h5>
+                            <p>Photos</p>
+                        </div>
+                    </div>
+                </div>
+                <!--== Single FunFact End ==-->
+
+                <!--== Single FunFact Start ==-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-funfact-wrap">
+                        <div class="funfact-icon">
+                            <img src="{{asset('assets/img/fun-fact/event.svg')}}" alt="Funfact">
+                        </div>
+                        <div class="funfact-info">
+                            <h5><span class="funfact-count">231</span>+</h5>
+                            <p>Events</p>
+                        </div>
+                    </div>
+                </div>
+                <!--== Single FunFact End ==-->
+
+                <!--== Single FunFact Start ==-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-funfact-wrap">
+                        <div class="funfact-icon">
+                            <img src="{{asset('assets/img/fun-fact/medal.svg')}}" alt="Funfact">
+                        </div>
+                        <div class="funfact-info">
+                            <h5><span class="funfact-count">32</span>+</h5>
+                            <p>Awards</p>
+                        </div>
+                    </div>
+                </div>
+                <!--== Single FunFact End ==-->
+            </div>
+        </div>
+    </section>
+    <!--== FunFact Area End ==-->
 @endsection
