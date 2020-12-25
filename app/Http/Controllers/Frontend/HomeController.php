@@ -22,6 +22,7 @@ class HomeController extends Controller
         $events = Event::wherePublished(true)
             ->where('start_at', '>=', Carbon::now())
             ->orderByDesc('created_at')
+            ->limit(3)
             ->get();
         $careers = Career::with('companyId')->wherePublished(true)->orderByDesc('created_at')->get();
         return view('frontend.pages.home', compact([

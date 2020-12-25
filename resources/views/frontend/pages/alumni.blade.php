@@ -27,10 +27,16 @@
                         <div class="directory-text-wrap">
                             <h2>Now we have <strong class="funfact-count">485274</strong> alumni </h2>
                             <div class="table-search-area">
-                                <form action="index.html">
+                                <form action="#">
                                     <input type="search" placeholder="Masukkan kata kunci..">
+                                    <select name="faculty">
+                                        <option selected disabled>Fakultas</option>
+                                        <option value="cmt">Kedoktran</option>
+                                        <option value="cmt">Teknik</option>
+                                        <option value="cmt">Hukum</option>
+                                    </select>
                                     <select name="dept">
-                                        <option selected>Jurusan</option>
+                                        <option selected disabled>Jurusan</option>
                                         <option value="cmt">Informatika</option>
                                         <option value="cmt">Komputer</option>
                                         <option value="cmt">Sipil</option>
@@ -46,7 +52,7 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">Nama</th>
-                                            <th scope="col">Jurusan</th>
+                                            <th scope="col">Pendidikan</th>
                                             <th scope="col">Tahun Lulus</th>
                                         </tr>
                                     </thead>
@@ -58,7 +64,10 @@
                                                         <img src="{{asset('storage/users/default.png')}}" alt="alumni">Nama Alumni
                                                     </a>
                                                 </td>
-                                                <td>Computer</td>
+                                                <td>
+                                                    <h6><b>Fakultas Teknik</b></h6>
+                                                    <p><i>Teknik Informatika</i></p>
+                                                </td>
                                                 <td>2014</td>
                                             </tr>
                                         @endfor
@@ -143,6 +152,24 @@
                                                 <p class="card-text"><small>Durasi : <b>2012 - presnt (8 thn)</small></b></p>
                                             @else
                                                 <p class="card-text"><small>Durasi : <b>2010 - 2012 (2 thn)</small></b></p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            @endfor
+                        </div>
+                        <h6>Sertifikat</h6>
+                        <div class="row">
+                            @for ($i = 0; $i < 2; $i++)
+                                <div class="col-12">
+                                    <div class="card border-primary my-2">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Sertifikat ke {{$i}}</h6>
+                                            <p class="card-text"><small>Di sini isi detailnya</small></p>
+                                            @if ($i !== 0)
+                                                <p class="card-text"><small>Tahun : <b>2012</small></b></p>
+                                            @else
+                                                <p class="card-text"><small>Tahun : <b>2010</small></b></p>
                                             @endif
                                         </div>
                                     </div>

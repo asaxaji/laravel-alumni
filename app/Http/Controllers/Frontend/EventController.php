@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -14,7 +16,13 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view("frontend.pages.event");
+        $events = Event::wherePublished(true)
+            ->where('start_at', '>=', Carbon::now())
+            ->orderByDesc('created_at')
+            ->get();
+        return view("frontend.pages.event", compact([
+            'events'
+        ]));
     }
 
     /**
@@ -46,7 +54,11 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        return view("frontend.pages.event-detail");
+        $event = Event::whereSlug($id)->firstOrFail();
+        // dd($event);
+        return view("frontend.pages.event-detail", compact([
+            'event'
+        ]));
     }
 
     /**

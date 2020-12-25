@@ -2,7 +2,7 @@
 
 @section('views')
     <!--== Page Title Area Start ==-->
-    <section id="page-title-area">
+    {{-- <section id="page-title-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 m-auto text-center">
@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--== Page Title Area End ==-->
 
     <!--== Gallery Page Content Start ==-->
@@ -26,36 +26,19 @@
                     <div class="col-lg-12">
                         <div class="single-event-details">
                             <div class="event-thumbnails">
-                                <div class="event-thumbnail-carousel owl-carousel">
+                                <div class="">
                                     <div class="event-thumb-item event-thumb-img-1">
                                         <div class="event-meta">
                                             <h3>Recently we are going to arrange a awesome get together!</h3>
-                                            <a class="event-address" href="#"><i class="fa fa-map-marker"></i> Sayidan
-                                                Street, Gondomanan, 8993, San Francisco, CA</a>
-                                            <a href="#" class="btn btn-brand btn-join">Join</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="event-thumb-item event-thumb-img-1">
-                                        <div class="event-meta">
-                                            <h3>Recently we are going to arrange a awesome get together!</h3>
-                                            <a class="event-address" href="#"><i class="fa fa-map-marker"></i> Sayidan
-                                                Street, Gondomanan, 8993, San Francisco, CA</a>
-                                            <a href="#" class="btn btn-brand btn-join">Join</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="event-thumb-item event-thumb-img-1">
-                                        <div class="event-meta">
-                                            <h3>Recently we are going to arrange a awesome get together!</h3>
-                                            <a class="event-address" href="#"><i class="fa fa-map-marker"></i> Sayidan
-                                                Street, Gondomanan, 8993, San Francisco, CA</a>
+                                            <a class="event-address" href="{{$event->gmaps}}" target="_blank"><i class="fa fa-map-marker"></i>
+                                                Lokasi Pelaksanaan Acara
+                                            </a>
                                             <a href="#" class="btn btn-brand btn-join">Join</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="event-countdown">
-                                    <div class="event-countdown-counter" data-date="2020/10/10"></div>
+                                    <div class="event-countdown-counter" data-date="{{dateFormat($event->start_at)->format('Y/m/d')}}"></div>
                                     <p>Remaining</p>
                                 </div>
                             </div>
@@ -71,7 +54,7 @@
                                 Etiam rhoncus. Ut leo. Morbi mollis tellus ac sapien. Fusce fermentum oo nec ante tempus
                                 hendrerit. Curabitur at lacus ac velit ornare lobortis. Donec pede justo, fringilla vel,
                                 aliquet nec, vulputate eget, arcu. In turpis. Quisque id mi.</p>
-                            <div class="event-schedul">
+                            {{-- <div class="event-schedul">
                                 <h3>Event Schedule</h3>
                                 <div class="row">
                                     <div class="col-lg-10 m-auto">
@@ -227,7 +210,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
