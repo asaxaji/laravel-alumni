@@ -14,7 +14,7 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        return view("frontend.pages.organization");
+        return view("frontend.pages.about");
     }
 
     /**

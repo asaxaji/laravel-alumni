@@ -24,8 +24,11 @@ class HomeController extends Controller
             ->orderByDesc('created_at')
             ->limit(3)
             ->get();
-        $careers = Career::with('companyId')->wherePublished(true)->orderByDesc('created_at')->get();
-        return view('frontend.pages.home', compact([
+        $careers = Career::with('companyId')
+            ->wherePublished(true)
+            ->orderByDesc('created_at')
+            ->get();
+        return view('frontend.pages.home.index', compact([
             'sliders',
             'events',
             'careers'

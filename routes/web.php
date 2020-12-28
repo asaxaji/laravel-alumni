@@ -28,7 +28,7 @@ Route::resource('/career', CareerController::class);
 Route::resource('/alumni', AlumniController::class);
 Route::resource('/faculty', FacultyController::class);
 Route::resource('/event', EventController::class);
-Route::resource('/organization', OrganizationController::class);
+Route::resource('/about', OrganizationController::class);
 Route::resource('/contact', ContactController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

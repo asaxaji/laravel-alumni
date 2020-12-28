@@ -54,8 +54,7 @@
                             <h3>Upcoming event</h3>
                         </div>
                         <div class="upcoming-event-content owl-carousel">
-                            <!-- No 1 Event -->
-                            @foreach ($events as $ek => $ev)
+                            @forelse ($events as $ek => $ev)
                                 <div class="single-upcoming-event">
                                     <div class="row">
                                         <div class="col-lg-5">
@@ -82,8 +81,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                            <!-- partial -->
+                            @empty
+                            @endforelse
                         </div>
                     </div>
                 </div>
