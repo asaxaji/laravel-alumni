@@ -68,8 +68,6 @@
     <script src="assets/vendor/css3-mediaqueries-js/css3-mediaqueries.js"></script>
     <![endif]-->
 
-    @yield('headers')
-
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendor/navbar/bootstrap-4-navbar.css')}}">
@@ -97,6 +95,8 @@
 
     <!-- Main Master Style  CSS  -->
     <link id="cbx-style" data-layout="1" rel="stylesheet" href="{{asset('assets/css/style-default.min.css')}}" media="all">
+
+    @yield('headers')
 </head>
 
 <body>
