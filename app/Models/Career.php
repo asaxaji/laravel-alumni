@@ -14,6 +14,7 @@ class Career extends Model
     protected $dates = ['end_at'];
 
     protected $fillable = [
+        'author_id',
         'company_id',
         'title',
         'slug',

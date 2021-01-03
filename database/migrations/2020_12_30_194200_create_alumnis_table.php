@@ -21,7 +21,7 @@ class CreateAlumnisTable extends Migration
             $table->string('email')->nullable();
             $table->string('agama')->nullable();
             $table->string('birth_place')->nullable();
-            $table->string('birth_date')->nullable();
+            $table->date('birth_date')->nullable();
             $table->string('phone_home')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('whatsapp')->nullable();

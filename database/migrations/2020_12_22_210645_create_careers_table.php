@@ -15,6 +15,7 @@ class CreateCareersTable extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('author_id')->nullable();
             $table->unsignedBigInteger('company_id')->nullable()->default(null);
             $table->foreign('company_id')->references('id')->on('companies')->onUpdate('cascade')->onDelete('set null');
             $table->string('title');

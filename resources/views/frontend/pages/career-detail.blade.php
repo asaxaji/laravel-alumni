@@ -81,28 +81,7 @@
                                 </div>
                             </header>
                             <section class="blog-details">
-                                {{-- {!!$career->body!!} --}}
-                                <p>Lorem ipsum condimentum ligula. Fusce fringilla magna non sapien dictum, eget
-                                    faucibus
-                                    dui maximus. Donec fringilla vel mi consequat tempor. </p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat.
-                                    Duvelit
-                                    lecspoe a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices
-                                    interdum, leo luctfiiius sem, vel vulputate diam ipsum sed lorem. Donec tempor arcu
-                                    nisl, et molestie massa hhisque ut. Nunc at rutrum leo. Mauris metus mauris, tridd.
-                                </p>
-                                <p>Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum. Aliquam nonh
-                                    edunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat.
-                                    Praesent vdd warius ultricemassa at faucibus. Aenean dignissim, orci sed faucibus
-                                    pharetra, dui mi dir ssim tortor, sit amet ntum mi ligula sit amet augue.
-                                    Pellentesqs
-                                    placerat. </p>
-                                <h5>Kualifikasi</h5>
-                                <ul>
-                                    <li>Kualifikasi 1</li>
-                                    <li>Kualifikasi 2</li>
-                                    <li>Kualifikasi 3</li>
-                                </ul>
+                                {!!$career->body!!}
                             </section>
 
                             {{-- <footer class="post-share">

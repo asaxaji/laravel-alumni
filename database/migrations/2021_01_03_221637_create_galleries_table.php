@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompaniesTable extends Migration
+class CreateGalleriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,13 @@ class CreateCompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('author_id')->nullable();
-            $table->string('logo')->nullable();
             $table->string('name');
-            $table->string('slug');
-            $table->string('email');
-            $table->string('phone');
-            $table->text('address');
-            $table->string('gmaps');
-            $table->text('body')->nullable();
+            $table->enum('type', ['image', 'video'])->default('image');
+            $table->string('file_url');
+            $table->boolean('published')->default(true);
             $table->timestamps();
         });
     }
@@ -35,6 +31,6 @@ class CreateCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('galleries');
     }
 }

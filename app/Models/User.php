@@ -30,6 +30,16 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
         'lastname',
         'nrp',
         'email',
+        'agama',
+        'birth_place',
+        'birth_date',
+        'phone_home',
+        'phone_number',
+        'whatsapp',
+        'address',
+        'provincy',
+        'city',
+        'zip_code',
         'alumni_id',
         'password',
     ];
@@ -63,4 +73,9 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function alumniId()
+    {
+        return $this->belongsTo(Alumni::class, 'alumni_id', 'id');
+    }
 }
