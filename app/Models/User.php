@@ -30,6 +30,7 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
         'lastname',
         'nrp',
         'email',
+        'alumni_id',
         'password',
     ];
 
