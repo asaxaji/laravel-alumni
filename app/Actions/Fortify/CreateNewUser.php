@@ -2,10 +2,12 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\Alumni;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use TCG\Voyager\Models\Role;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -19,16 +21,28 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input)
     {
+        $findAlumni = Alumni::whereEmail($input['email'])->orWhere('nrp', $input['nrp'])->first();
+        $userRole = Role::where('name', 'user')->first();
+
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
+            'firstname' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
+            'nrp' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
         ])->validate();
 
-        return User::create([
-            'name' => $input['name'],
+        $createData = [
+            'firstname' => $input['firstname'],
+            'lastname' => $input['lastname'],
+            'nrp' => $input['nrp'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
-        ]);
+        ];
+
+        if ($findAlumni->exists()) $createData['alumni_id'] = $findAlumni->id;
+        if ($userRole->exists()) $createData['role_id'] = $userRole->id;
+
+        return User::create($createData);
     }
 }

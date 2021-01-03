@@ -13,12 +13,12 @@ class AddFieldToUser extends Migration
      */
     public function up()
     {
-        Schema::table('user', function (Blueprint $table) {
-            $table->string('lastname');
-            $table->string('no_telp');
-            $table->string('no_wa');
-            $table->string('tempat_lahir'); // enum city
-            $table->string('no_wa');
+        Schema::table('users', function (Blueprint $table) {
+            $table->renameColumn('name', 'firstname');
+            $table->string('lastname')->after('email');
+            $table->string('nrp')->nullable()->after('lastname');
+            $table->foreignId('alumni_id')->nullable()->after('nrp');
+            $table->softDeletes();
         });
     }
 
@@ -29,8 +29,8 @@ class AddFieldToUser extends Migration
      */
     public function down()
     {
-        Schema::table('user', function (Blueprint $table) {
-            //
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('firstname', 'lastname', 'nrp', 'alumni_id', 'deleted_at');
         });
     }
 }
