@@ -40,7 +40,19 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ];
 
-        if ($findAlumni->exists()) $createData['alumni_id'] = $findAlumni->id;
+        if ($findAlumni->exists()) {
+            $createData['alumni_id'] = $findAlumni->id;
+            $createData['agama'] = $findAlumni->agama;
+            $createData['birth_place'] = $findAlumni->birth_place;
+            $createData['birth_date'] = $findAlumni->birth_date;
+            $createData['phone_home'] = $findAlumni->phone_home;
+            $createData['phone_number'] = $findAlumni->phone_number;
+            $createData['whatsapp'] = $findAlumni->whatsapp;
+            $createData['address'] = $findAlumni->address;
+            $createData['provincy'] = $findAlumni->provincy;
+            $createData['city'] = $findAlumni->city;
+            $createData['zip_code'] = $findAlumni->zip_code;
+        }
         if ($userRole->exists()) $createData['role_id'] = $userRole->id;
 
         return User::create($createData);

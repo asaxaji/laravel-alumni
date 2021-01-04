@@ -77,6 +77,61 @@
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="birth_place" value="{{ __('Birth Place') }}" />
+            <x-jet-input id="birth_place" type="text" class="mt-1 block w-full" wire:model.defer="state.birth_place" />
+            <x-jet-input-error for="birth_place" class="mt-2" />
+        </div>
+        
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="birth_date" value="{{ __('Birth Date') }}" />
+            <x-jet-input id="birth_date" type="date" class="mt-1 block w-full" wire:model.defer="state.birth_date" />
+            <x-jet-input-error for="birth_date" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="phone_home" value="{{ __('Phone Home') }}" />
+            <x-jet-input id="phone_home" type="text" class="mt-1 block w-full" wire:model.defer="state.phone_home" />
+            <x-jet-input-error for="phone_home" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="phone_number" value="{{ __('Phone Number') }}" />
+            <x-jet-input id="phone_number" type="text" class="mt-1 block w-full" wire:model.defer="state.phone_number" />
+            <x-jet-input-error for="phone_number" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="whatsapp" value="{{ __('Whatsapp Number') }}" />
+            <x-jet-input id="whatsapp" type="text" class="mt-1 block w-full" wire:model.defer="state.whatsapp" />
+            <x-jet-input-error for="whatsapp" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="address" value="{{ __('Address') }}" />
+            <x-jet-input id="address" type="text" class="mt-1 block w-full" wire:model.defer="state.address" />
+            <x-jet-input-error for="address" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="provincy" value="{{ __('Provincy') }}" />
+            <x-jet-input id="provincy" type="text" class="mt-1 block w-full" wire:model.defer="state.provincy" />
+            <x-jet-input-error for="provincy" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="city" value="{{ __('City') }}" />
+            <x-jet-input id="city" type="text" class="mt-1 block w-full" wire:model.defer="state.city" />
+            <x-jet-input-error for="city" class="mt-2" />
+        </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="zip_code" value="{{ __('Poscode') }}" />
+            <x-jet-input id="zip_code" type="text" class="mt-1 block w-full" wire:model.defer="state.zip_code" />
+            <x-jet-input-error for="zip_code" class="mt-2" />
+        </div>
+
     </x-slot>
 
     <x-slot name="actions">
