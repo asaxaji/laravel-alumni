@@ -9,5 +9,14 @@ class Gallery extends Model
 {
     use HasFactory;
 
-    
+    public $timestamps = true;
+
+    protected $fillable = [
+        'author_id',
+        'name',
+        'type',
+        'image',
+        'video_url',
+        'published',
+    ];
 }

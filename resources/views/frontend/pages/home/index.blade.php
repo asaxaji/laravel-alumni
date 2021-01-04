@@ -22,11 +22,11 @@
     <!--== Job Opportunity Area End ==-->
 
     <!--== Gallery Area Start ==-->
-    @includeIf('frontend.pages.home.gallery', ['show' => true])
+    @includeWhen($galleries->count() > 0, 'frontend.pages.home.gallery', [$galleries])
     <!--== Gallery Area Start ==-->
 
     <!--== Blog Area Start ==-->
-    @includeIf('frontend.pages.home.blog', ['show' => true])
+    @includeWhen($blogs->count() > 0, 'frontend.pages.home.blog', [$blogs])
     <!--== Blog Area EndBlog ==-->
 
     <!--== FunFact Area Start ==-->

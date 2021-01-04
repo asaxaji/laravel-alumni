@@ -19,7 +19,7 @@
                         <p>There are many company Lorem ipsm dolor sitg amet, csetur adipicing elit, sed do eiusmod
                             tempor dncint ut labore et dolore magna alis enim ad minim veniam, quis nostrud
                             exercitation ullamco.</p>
-                        <a href="#" class="btn btn-brand about-btn">know more</a>
+                        <a href="{{route('about.index')}}" class="btn btn-brand about-btn">know more</a>
                     </div>
                 </div>
             </div>

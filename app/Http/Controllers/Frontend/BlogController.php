@@ -15,9 +15,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderByDesc('created_at')->paginate(9);
+        $blogs = Post::orderByDesc('created_at')->paginate(9);
         return view('frontend.pages.blog', compact([
-            'posts'
+            'blogs'
         ]));
     }
 
@@ -50,9 +50,9 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        $post = Post::whereSlug($id)->firstOrFail();
+        $blog = Post::whereSlug($id)->firstOrFail();
         return view('frontend.pages.blog-detail', compact([
-            'post'
+            'blog'
         ]));
     }
 

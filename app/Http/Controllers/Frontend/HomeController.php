@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Career;
 use App\Models\Event;
+use App\Models\Gallery;
 use App\Models\Slider;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use TCG\Voyager\Models\Post;
 
 class HomeController extends Controller
 {
@@ -28,10 +30,14 @@ class HomeController extends Controller
             ->wherePublished(true)
             ->orderByDesc('created_at')
             ->get();
+        $galleries = Gallery::orderByDesc('created_at')->limit(15)->get();
+        $blogs = Post::orderByDesc('created_at')->whereStatus('PUBLISHED')->limit(6)->get();
         return view('frontend.pages.home.index', compact([
             'sliders',
             'events',
-            'careers'
+            'careers',
+            'galleries',
+            'blogs'
         ]));
     }
 

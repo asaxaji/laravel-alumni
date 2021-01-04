@@ -29,21 +29,21 @@
                         <div class="blog-page-contant-start">
                             <div class="row">
                                 <!--== Single Blog Post start ==-->
-                                @for ($i = 0; $i < 15; $i++)
+                                @foreach ($blogs as $kb => $vb)
                                     <div class="col-lg-4 col-md-4 my-4">
                                         <article class="single-blog-post">
                                             <figure class="blog-thumb">
                                                 <div class="blog-thumbnail">
-                                                    <img src="https://images.pexels.com/photos/159866/books-book-pages-read-literature-159866.jpeg" alt="Blog" class="img-fluid">
+                                                    <img src="{{asset('storage/'.$vb->image)}}" alt="{{$vb->title}}" class="img-fluid">
                                                 </div>
                                                 <figcaption class="blog-meta clearfix">
-                                                    <a href="{{route('blog.show', ['detail'])}}" class="author">
+                                                    <a href="{{route('blog.show', [$vb->slug])}}" class="author">
                                                         <div class="author-pic">
                                                             <img src="{{asset('storage/users/default.png')}}" alt="Author">
                                                         </div>
                                                         <div class="author-info">
-                                                            <h5>Daney williams</h5>
-                                                            <p>2 hours Ago</p>
+                                                            <h5>Admin</h5>
+                                                            <p>{{$vb->created_at->diffForhumans()}}</p>
                                                         </div>
                                                     </a>
                                                     <div class="like-comm pull-right">
@@ -54,23 +54,21 @@
                                             </figure>
 
                                             <div class="blog-content">
-                                                <h3><a href="{{route('blog.show', ['detail'])}}">Recently we create a maassive project that
-                                                        will be a.....</a></h3>
-                                                <p>This is a big project of our company, we are happy to completed this type
-                                                    projec which are
-                                                    get world famous award</p>
-                                                <a href="{{route('blog.show', ['detail'])}}" class="btn btn-brand">More</a>
+                                                <h3><a href="{{route('blog.show', [$vb->slug])}}">{{Str::limit($vb->title, 20)}}</a></h3>
+                                                <p>{{Str::limit($vb->excerpt, 100)}}</p>
+                                                <a href="{{route('blog.show', [$vb->slug])}}" class="btn btn-brand">More</a>
                                             </div>
                                         </article>
                                     </div>
-                                @endfor
+                                @endforeach
                                 <!--== Single Blog Post End ==-->
                             </div>
 
                             <!-- Pagination Start -->
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="pagination-wrap text-center">
+                                    {{$blogs->links()}}
+                                    {{-- <div class="pagination-wrap text-center">
                                         <nav>
                                             <ul class="pagination">
                                                 <li class="page-item"><a class="page-link" href="#"><i
@@ -84,7 +82,7 @@
                                                             class="fa fa-angle-right"></i></a></li>
                                             </ul>
                                         </nav>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <!-- Pagination End -->
