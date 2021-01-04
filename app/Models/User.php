@@ -78,4 +78,8 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
     {
         return $this->belongsTo(Alumni::class, 'alumni_id', 'id');
     }
+
+    public function getNameAttribute(){
+        return $this->firstname .' '. $this->lastname;
+      }
 }
