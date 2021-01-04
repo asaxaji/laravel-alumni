@@ -11,8 +11,12 @@
 
                 <div class="col-lg-6 col-sm-5 col-5 text-right">
                     <div class="preheader-right">
-                        <a title="Login" class="btn-auth btn-auth-rev" href="{{route('login')}}">Login</a>
-                        <a title="Register" class="btn-auth btn-auth" href="{{route('register')}}">Signup</a>
+                        @if (Auth::check())
+                            <a title="Dashboard" class="btn-auth btn-auth" href="{{route('dashboard')}}">Profile</a>
+                        @else
+                            <a title="Login" class="btn-auth btn-auth-rev" href="{{route('login')}}">Login</a>
+                            <a title="Register" class="btn-auth btn-auth" href="{{route('register')}}">Signup</a>
+                        @endif
                     </div>
                 </div>
             </div>

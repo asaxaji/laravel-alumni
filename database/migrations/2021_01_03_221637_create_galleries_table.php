@@ -18,8 +18,8 @@ class CreateGalleriesTable extends Migration
             $table->foreignId('author_id')->nullable();
             $table->string('name');
             $table->enum('type', ['image', 'video'])->default('image');
-            $table->string('image');
-            $table->string('video_url');
+            $table->string('image')->nullable();
+            $table->string('video_url')->nullable();
             $table->boolean('published')->default(true);
             $table->timestamps();
         });

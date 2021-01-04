@@ -23,6 +23,7 @@ use App\Http\Controllers\Frontend\ContactController;
 
 Route::get('/welcome', function() { return view('welcome'); });
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery.index');
 Route::resource('/blog', BlogController::class);
 Route::resource('/career', CareerController::class);
 Route::resource('/alumni', AlumniController::class);
@@ -30,6 +31,7 @@ Route::resource('/faculty', FacultyController::class);
 Route::resource('/event', EventController::class);
 Route::resource('/about', OrganizationController::class);
 Route::resource('/contact', ContactController::class);
+// TODO: Gallery
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
