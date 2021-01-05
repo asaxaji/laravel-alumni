@@ -106,4 +106,12 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function gallery()
+    {
+        $galleries = Gallery::wherePublished(true)->orderByDesc('created_at')->paginate(15);
+        return view('frontend.pages.galleries', compact([
+            'galleries',
+        ]));
+    }
 }

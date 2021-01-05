@@ -185,7 +185,7 @@ return [
 
     'primary_color' => '#22A7F0',
 
-    'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
+    'show_dev_tips' => false, // Show development tip "How To Use:" in Menu and Settings
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
@@ -221,7 +221,7 @@ return [
         ],
         */
         //Path for media-manager. Relative to the filesystem.
-        'path'                => '/',
+        'path'                => '',
         'show_folders'        => true,
         'allow_upload'        => true,
         'allow_move'          => true,

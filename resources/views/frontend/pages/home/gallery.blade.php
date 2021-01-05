@@ -28,14 +28,14 @@
                         @foreach ($galleries as $kg => $vg)
                             @if ($vg->type === 'video')
                                 <div class="col-lg-3  col-sm-6 pic">
-                                    <div class="single-gallery-item video gallery-bg-7">
+                                    <div class="single-gallery-item video gallery-bg-{{$kg+1}}">
                                         <a href="{{$vg->video_url}}"
                                             class="btn btn-video-play video-popup"><i class="fa fa-play"></i></a>
                                     </div>
                                 </div>
                             @else
                                 <div class="col-lg-3  col-sm-6 pic recent old">
-                                    <div class="single-gallery-item gallery-bg-8">
+                                    <div class="single-gallery-item gallery-bg-{{$kg+1}}">
                                         <div class="gallery-hvr-wrap">
                                             <div class="gallery-hvr-text">
                                                 <h4>{{$vg->name}}</h4>
@@ -51,7 +51,7 @@
                         @endforeach
                         <!-- Single Gallery End -->
                         <div class="col-12 text-center content-center mt-5">
-                            <a href="{{route('about.index')}}" class="btn btn-brand about-btn">Lihat Semua</a>
+                            <a href="{{route('gallery.index')}}" class="btn btn-brand about-btn">Lihat Semua</a>
                         </div>
                     </div>
                     <!-- Gallery Item content End -->

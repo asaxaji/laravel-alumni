@@ -76,7 +76,7 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/animate/animate.css')}}" media="all">
 
     <!-- FONT AWESOME CSS -->
-    <link rel="stylesheet" href="{{asset('assets/vendor/fontawesome/css/font-awe')}}some.min.css">
+    <link rel="stylesheet" href="{{asset('assets/vendor/fontawesome/css/font-awesome.min.css')}}">
 
     <!--owl carousel css -->
     <link rel="stylesheet" href="{{asset('assets/vendor/owl-carousel/owl.carousel.css')}}" media="all">
@@ -174,6 +174,7 @@
 
     <!-- custom js: custom js file is added for easy custom js code  -->
     <script src="{{asset('assets/js/custom.js')}}"></script>
+    <script id="switcherhandle" src="{{asset('assets/switcher/switcher.js')}}"></script>
 
     <!-- custom js: custom scripts for theme style switcher for demo purpose  -->
 
