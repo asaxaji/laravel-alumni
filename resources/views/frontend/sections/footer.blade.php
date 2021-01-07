@@ -8,9 +8,8 @@
                     <div class="single-widget-wrap">
                         <div class="widgei-body">
                             <div class="footer-about">
-                                <img src="{{asset('assets/img/footer-logo.png')}}" alt="Logo" class="img-fluid">
-                                <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed do eiusmod
-                                    tempor incidunt ut et do maga aliqua enim ad minim.</p>
+                                <img src="{{asset('storage/'.setting('site.logo'))}}" alt="Logo" class="img-fluid">
+                                <p>{{setting('site.title')}}<br/>{{setting('site.description')}}</p>
                                 <a href="#">Phone: +8745 44 5444</a> <a href="#">Fax: +88474 156 362</a> <br> <a
                                     href="#">Email: demoemail@demo.com</a>
                             </div>
@@ -43,7 +42,7 @@
                 <!-- Single Widget End -->
 
                 <!-- Single Widget Start -->
-                <div class="col-lg-3 col-sm-6">
+                {{-- <div class="col-lg-3 col-sm-6">
                     <div class="single-widget-wrap">
                         <h4 class="widget-title">Usefull Link</h4>
                         <div class="widgei-body">
@@ -61,7 +60,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Single Widget End -->
 
                 <!-- Single Widget Start -->
@@ -70,11 +69,7 @@
                         <h4 class="widget-title">University</h4>
                         <div class="widgei-body">
                             <ul class="footer-list clearfix">
-                                <li><a href="#">Pricing Plan</a></li>
-                                <li><a href="#">Categories</a></li>
-                                <li><a href="#">Populer Deal</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Support</a></li>
+                                {{menu('frontend')}}
                             </ul>
                         </div>
                     </div>

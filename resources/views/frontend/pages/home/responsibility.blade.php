@@ -13,45 +13,23 @@
         <!--== Responsibility Content Wrapper ==-->
         <div class="row text-center text-sm-left">
             <!--== Single Responsibility Start ==-->
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-responsibility">
-                    <img src="{{asset('assets/img/responsibility/01.png')}}" alt="Responsibility">
-                    <h4>Scholarship</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
-                    </p>
-                </div>
-            </div>
-            <!--== Single Responsibility End ==-->
-
-            <!--== Single Responsibility Start ==-->
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-responsibility">
-                    <img src="{{asset('assets/img/responsibility/02.png')}}" alt="Responsibility">
-                    <h4>Help Current Students</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
-                    </p>
-                </div>
-            </div>
-            <!--== Single Responsibility End ==-->
-
-            <!--== Single Responsibility Start ==-->
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-responsibility">
-                    <img src="{{asset('assets/img/responsibility/03.png')}}" alt="Responsibility">
-                    <h4>Help Our University</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
-                    </p>
-                </div>
-            </div>
-            <!--== Single Responsibility End ==-->
-
-            <!--== Single Responsibility Start ==-->
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-responsibility">
-                    <img src="{{asset('assets/img/responsibility/04.png')}}" alt="Responsibility">
-                    <h4>Build Our Community</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
-                    </p>
+            <div class="col-12">
+                <div class="swiper-container swiper-services">
+                    <div class="swiper-wrapper">
+                        @foreach ($services as $ks => $vs)
+                            <div class="swiper-slide">
+                                <a href="{{route('service.show', [$vs->slug])}}">
+                                    <div class="single-responsibility text-center">
+                                        <img src="{{asset('storage/'.$vs->image)}}" alt="Responsibility">
+                                        <h4>{{$vs->title}}</h4>
+                                        <p>
+                                            {{$vs->excerpt}}
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
             <!--== Single Responsibility End ==-->

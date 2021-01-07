@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\FacultyController;
 use App\Http\Controllers\Frontend\EventController;
 use App\Http\Controllers\Frontend\OrganizationController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +31,8 @@ Route::resource('/alumni', AlumniController::class);
 Route::resource('/faculty', FacultyController::class);
 Route::resource('/event', EventController::class);
 Route::resource('/about', OrganizationController::class);
+Route::resource('/service', ServiceController::class);
 Route::resource('/contact', ContactController::class);
-// TODO: Gallery
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

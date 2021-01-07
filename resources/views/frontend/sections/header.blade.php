@@ -4,8 +4,8 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-7 col-7">
                     <div class="preheader-left">
-                        <a href="mailto:info@construc.com"><strong>Email:</strong> info@construc.com</a>
-                        <a href="mailto:info@construc.com"><strong>Hotline:</strong> 880 454 5477</a>
+                        <a href="mailto:{{setting('site.email')}}"><strong>Email:</strong> {{setting('site.email')}}</a>
+                        <a href="tel:{{setting('site.phone')}}"><strong>Hotline:</strong> {{setting('site.phone')}}</a>
                     </div>
                 </div>
 
@@ -29,7 +29,7 @@
                 <div class="col-lg-12">
                     <nav class="main-menu navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="{{route('home.index')}}">
-                            <img src="{{asset('assets/img/logo.png')}}" alt="Logo">
+                            <img src="{{asset('storage/'.setting('site.logo'))}}" alt="Logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menucontent"
                             aria-controls="menucontent" aria-expanded="false">

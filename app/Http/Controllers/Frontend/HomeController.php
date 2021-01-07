@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Career;
 use App\Models\Event;
 use App\Models\Gallery;
+use App\Models\Service;
 use App\Models\Slider;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -32,12 +33,14 @@ class HomeController extends Controller
             ->get();
         $galleries = Gallery::orderByDesc('created_at')->limit(15)->get();
         $blogs = Post::orderByDesc('created_at')->whereStatus('PUBLISHED')->limit(6)->get();
+        $services = Service::wherePublish(true)->orderByDesc('created_at')->get();
         return view('frontend.pages.home.index', compact([
             'sliders',
             'events',
             'careers',
             'galleries',
-            'blogs'
+            'blogs',
+            'services'
         ]));
     }
 

@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>uniAlumni</title>
+    <title>{{setting('site.title')}}</title>
 
-    <meta name="description" content="simple description for your site">
-    <meta name="keywords" content="keyword1, keyword2">
-    <meta name="author" content="Jobz">
+    <meta name="description" content="{{setting('site.description')}}">
+    <meta name="keywords" content="{{setting('site.keyword')}}">
+    <meta name="author" content="rouninerror">
 
     <!-- twitter card starts from here, if you don't need remove this section -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@yourtwitterusername">
     <meta name="twitter:creator" content="@yourtwitterusername">
-    <meta name="twitter:url" content="http://twitter.com">
+    <meta name="twitter:url" content="{{url()->full()}}">
     <meta name="twitter:title" content="Your home page title, max 140 char"> <!-- maximum 140 char -->
     <meta name="twitter:description" content="Your site description, maximum 140 char "> <!-- maximum 140 char -->
     <meta name="twitter:image" content="{{asset('assets/img/twittercardimg/twittercard-144-144.png')}}">
@@ -25,7 +25,7 @@
 
     <!-- facebook open graph starts from here, if you don't need then delete open graph related  -->
     <meta property="og:title" content="Your home page title">
-    <meta property="og:url" content="{{config('app.url')}}">
+    <meta property="og:url" content="{{url()->full()}}">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Your site name here">
     <!--meta property="fb:admins" content="" /-->
@@ -41,9 +41,9 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- icons & favicons -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon/favicon.ico')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('storage/'.setting('site.icon'))}}">
     <!-- this icon shows in browser toolbar -->
-    <link rel="icon" type="image/x-icon" href="{{asset('assets/img/favicon/favicon.ico')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('storage/'.setting('site.icon'))}}">
     <!-- this icon shows in browser toolbar -->
     <link rel="apple-touch-icon" sizes="57x57" href="{{asset('assets/img/favicon/apple-icon-57x57.png')}}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{asset('assets/img/favicon/apple-icon-60x60.png')}}">
@@ -89,6 +89,10 @@
 
     <!--Offcanvas css -->
     <link rel="stylesheet" href="{{asset('assets/vendor/js-offcanvas/css/js-offcanvas.css')}}" media="all">
+
+    {{-- Swipper --}}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- MODERNIZER  -->
     <script src="{{asset('assets/vendor/modernizr/modernizr-custom.js')}}"></script>

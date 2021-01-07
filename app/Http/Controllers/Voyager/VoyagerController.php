@@ -76,8 +76,11 @@ class VoyagerController extends Controller
 
     public function assets(Request $request)
     {
+        // /home/kali/Application/php/laravel/unialumni/public/assets/vendor/voyager
+        // /home/kali/Application/php/laravel/unialumni/vendor/tcg/voyager/publishable/assets
+        // /home/kali/Application/php/laravel/unialumni/vendor/tcg/voyager/publishable/assets/js/app.js
         try {
-            $path = dirname(__DIR__, 3).'/publishable/assets/'.Util::normalizeRelativePath(urldecode($request->path));
+            $path = dirname(__DIR__, 4).'/vendor/tcg/voyager/publishable/assets/'.Util::normalizeRelativePath(urldecode($request->path));
         } catch (\LogicException $e) {
             abort(404);
         }
