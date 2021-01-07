@@ -51,13 +51,15 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            @for ($i = 0; $i < 50; $i++)
+                                                            @forelse ($faculties->faculties as $kf => $vf)
                                                                 <tr>
                                                                     <td>
-                                                                        <a class="faculty-list" href="{{route('faculty.show', 'detail')}}">Fakultas ke {{$i}}</a>
+                                                                        <a class="faculty-list" href="{{route('faculty.show', [$vf->slug])}}">{{$vf->name}}</a>
                                                                     </td>
                                                                 </tr>
-                                                            @endfor
+                                                            @empty
+                                                                
+                                                            @endforelse
                                                         </tbody>
                                                     </table>
                                                 </div>

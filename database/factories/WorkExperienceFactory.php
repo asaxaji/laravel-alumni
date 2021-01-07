@@ -2,7 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Company;
+use App\Models\User;
 use App\Models\WorkExperience;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class WorkExperienceFactory extends Factory
@@ -21,8 +24,15 @@ class WorkExperienceFactory extends Factory
      */
     public function definition()
     {
+        $user = User::whereEmail('risqir57@gmail.com')->first();
+        $company = Company::first();
         return [
-            //
+            'user_id' => $user->id,
+            'company_id' => $company->id,
+            'jabatan' => 'isi jabatan',
+            'is_cureent' => false,
+            'start_at' => Carbon::now()->addYear(-1),
+            'end_at' => Carbon::now(),
         ];
     }
 }

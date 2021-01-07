@@ -129,6 +129,11 @@ abstract class Controller extends BaseController
             } else {
                 $data->{$row->field} = $content;
             }
+
+            // Custom important condition
+            if ($row->type == 'author_id') {
+                $content = (empty($data->{$row->field})) ? auth()->id() : $data->{$row->field};
+            }
         }
 
         if (isset($data->additional_attributes)) {

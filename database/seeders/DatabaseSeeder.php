@@ -6,8 +6,11 @@ use App\Models\Alumni;
 use App\Models\Career;
 use App\Models\Company;
 use App\Models\Event;
+use App\Models\Graduates;
+use App\Models\LifeCertificate;
 use App\Models\Service;
 use App\Models\Slider;
+use App\Models\WorkExperience;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,6 +27,9 @@ class DatabaseSeeder extends Seeder
         // Company::factory(3)->create();
         // Career::factory(12)->create();
         // Alumni::factory(3)->create();
-        Service::factory(6)->create();
+        // Service::factory(6)->create();
+        Graduates::factory(1)->create();
+        WorkExperience::factory(1)->create();
+        LifeCertificate::factory(3)->create();
     }
 }

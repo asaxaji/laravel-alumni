@@ -15,6 +15,12 @@ class CreateWorkExperiencesTable extends Migration
     {
         Schema::create('work_experiences', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('company_id')->nullable();
+            $table->string('jabatan');
+            $table->boolean('is_cureent')->default(false);
+            $table->date('start_at');
+            $table->date('end_at')->nullable();
             $table->timestamps();
         });
     }

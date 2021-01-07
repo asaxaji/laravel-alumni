@@ -28,28 +28,14 @@
                         <article class="single-blog-content-wrap">
                             <header class="article-head">
                                 <div class="single-blog-thumb">
-                                    <img src="https://bkpsdm.bandaacehkota.go.id/site/wp-content/uploads/2020/05/Struktur-Organisasi-Badan-Kepegawaian-dan-Pengembangan-Sumber-Daya-Manusia-Kota-Banda-Aceh.png" class="img-fluid img-zoomify" alt="Blog">
+                                    <img src="{{asset('storage/'.$faculty->image)}}" class="img-fluid img-zoomify" alt="Blog">
                                 </div>
                                 <div class="single-blog-meta">
-                                    <h2><b>Fakultas Detail</b></h2>
+                                    <h2><b>{{$faculty->name}}</b></h2>
                                 </div>
                             </header>
                             <section class="blog-details">
-                                <p>Lorem ipsum condimentum ligula. Fusce fringilla magna non sapien dictum, eget
-                                    faucibus
-                                    dui maximus. Donec fringilla vel mi consequat tempor. </p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat.
-                                    Duvelit
-                                    lecspoe a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices
-                                    interdum, leo luctfiiius sem, vel vulputate diam ipsum sed lorem. Donec tempor arcu
-                                    nisl, et molestie massa hhisque ut. Nunc at rutrum leo. Mauris metus mauris, tridd.
-                                </p>
-                                <p>Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum. Aliquam nonh
-                                    edunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat.
-                                    Praesent vdd warius ultricemassa at faucibus. Aenean dignissim, orci sed faucibus
-                                    pharetra, dui mi dir ssim tortor, sit amet ntum mi ligula sit amet augue.
-                                    Pellentesqs
-                                    placerat. </p>
+                                {!!$faculty->body!!}
                             </section>
                         </article>
                     </div>
@@ -62,11 +48,9 @@
                                     <input type="search" placeholder="Masukkan kata kunci..">
                                     <select name="dept">
                                         <option selected>Jurusan</option>
-                                        <option value="cmt">Informatika</option>
-                                        <option value="cmt">Komputer</option>
-                                        <option value="cmt">Sipil</option>
-                                        <option value="cmt">Mesin</option>
-                                        <option value="cmt">Arsitek</option>
+                                        @foreach ($faculty->prodies as $kp => $vp)
+                                            <option value="{{$vp->id}}">{{$vp->name}}</option>
+                                        @endforeach
                                     </select>
                                     <button class="btn btn-brand">Search</button>
                                 </form>

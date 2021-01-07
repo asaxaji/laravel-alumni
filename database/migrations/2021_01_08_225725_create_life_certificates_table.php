@@ -15,6 +15,10 @@ class CreateLifeCertificatesTable extends Migration
     {
         Schema::create('life_certificates', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->string('image')->nullable();
+            $table->string('title');
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }

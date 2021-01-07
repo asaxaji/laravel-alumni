@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use TCG\Voyager\Models\Post;
 
 class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
 {
@@ -79,7 +80,42 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
         return $this->belongsTo(Alumni::class, 'alumni_id', 'id');
     }
 
-    public function getNameAttribute(){
+    public function getNameAttribute() {
         return $this->firstname .' '. $this->lastname;
-      }
+    }
+
+    public function lifeCertificates()
+    {
+        return $this->hasMany(LifeCertificate::class, 'user_id', 'id');
+    }
+
+    public function graduates()
+    {
+        return $this->hasMany(Graduates::class, 'user_id', 'id')->orderByDesc('created_at');
+    }
+    
+    public function workExperiences()
+    {
+        return $this->hasMany(WorkExperience::class, 'user_id', 'id');
+    }
+
+    public function events()
+    {
+        return $this->belongsToMany(Event::class, 'event_users');
+    }
+
+    public function careers()
+    {
+        return $this->belongsToMany(Career::class, 'career_users');
+    }
+
+    public function authorPost() 
+    {
+        return $this->hasMany(Post::class, 'author_id', 'id');
+    }
+
+    public function authorCareer() 
+    {
+        return $this->hasMany(Career::class, 'author_id', 'id');
+    }
 }

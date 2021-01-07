@@ -4,21 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Prody extends Model
+class CareerUser extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     public $timestamps = true;
 
     protected $fillable = [
-        'faculty_id',
-        'name',
-        'slug'
+        'user_id',
+        'career_id',
+        'status',
     ];
-
-    public function facultyId()
-    {
-        return $this->hasOne(Faculty::class, 'faculty_id', 'id');
-    }
 }

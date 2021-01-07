@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faculty;
+use App\Models\University;
 use Illuminate\Http\Request;
 
 class FacultyController extends Controller
@@ -14,7 +16,11 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        return view('frontend.pages.faculty');
+        $faculties = University::with('faculties')
+            ->first();
+        return view('frontend.pages.faculty', compact([
+            'faculties'
+        ]));
     }
 
     /**
@@ -46,7 +52,10 @@ class FacultyController extends Controller
      */
     public function show($id)
     {
-        return view('frontend.pages.faculty-detail');
+        $faculty = Faculty::with('prodies')->whereSlug($id)->firstOrFail();
+        return view('frontend.pages.faculty-detail', compact([
+            'faculty'
+        ]));
     }
 
     /**

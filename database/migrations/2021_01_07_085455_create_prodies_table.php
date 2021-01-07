@@ -17,6 +17,7 @@ class CreateProdiesTable extends Migration
             $table->id();
             $table->foreignId('faculty_id');
             $table->string('name');
+            $table->string('slug');
             $table->timestamps();
         });
     }

@@ -16,7 +16,10 @@ class CreateFacultiesTable extends Migration
         Schema::create('faculties', function (Blueprint $table) {
             $table->id();
             $table->foreignId('university_id');
+            $table->string('image');
             $table->string('name');
+            $table->string('slug');
+            $table->text('body');
             $table->timestamps();
         });
     }
