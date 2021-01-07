@@ -4,6 +4,7 @@ namespace App\Actions\Fortify;
 
 use App\Models\Alumni;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -40,7 +41,7 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ];
 
-        if ($findAlumni->exists()) {
+        if (!empty($findAlumni->id)) {
             $createData['alumni_id'] = $findAlumni->id;
             $createData['agama'] = $findAlumni->agama;
             $createData['birth_place'] = $findAlumni->birth_place;
@@ -53,8 +54,7 @@ class CreateNewUser implements CreatesNewUsers
             $createData['city'] = $findAlumni->city;
             $createData['zip_code'] = $findAlumni->zip_code;
         }
-        if ($userRole->exists()) $createData['role_id'] = $userRole->id;
-
+        if (!empty($userRole->id)) $createData['role_id'] = $userRole->id;
         return User::create($createData);
     }
 }

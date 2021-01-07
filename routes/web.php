@@ -34,6 +34,9 @@ Route::resource('/about', OrganizationController::class);
 Route::resource('/service', ServiceController::class);
 Route::resource('/contact', ContactController::class);
 
+// Not Page
+Route::get('/disable-auth', [HomeController::class, 'disableAuth'])->name('disauth.index');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

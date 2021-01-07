@@ -117,4 +117,9 @@ class HomeController extends Controller
             'galleries',
         ]));
     }
+
+    public function disableAuth()
+    {
+        return view('auth.disable-login');
+    }
 }
