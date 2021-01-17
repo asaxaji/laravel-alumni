@@ -15,7 +15,7 @@ class CreateProviencesTable extends Migration
     {
         Schema::create('proviences', function (Blueprint $table) {
             $table->bigInteger('id');
-            $table->string('name');
+            $table->string('nama');
             $table->timestamps();
         });
     }

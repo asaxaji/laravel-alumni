@@ -11,6 +11,8 @@ class WorkExperience extends Model
 
     public $timestamps = true;
 
+    protected $dates = ['start_at', 'end_at'];
+
     protected $fillable = [
         'user_id',
         'company_id',

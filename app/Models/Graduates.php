@@ -11,6 +11,9 @@ class Graduates extends Model
     
     public $timestamps = true;
 
+    protected $dates = ['start_at',
+    'end_at',];
+
     protected $fillable =[
         'user_id',
         'university_id',
@@ -38,5 +41,10 @@ class Graduates extends Model
     public function prody()
     {
         return $this->hasOne(Prody::class, 'id', 'prody_id');
+    }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 }

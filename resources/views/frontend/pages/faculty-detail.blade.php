@@ -66,17 +66,95 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @for ($i = 0; $i < 50; $i++)
+                                        @foreach ($faculty->graduates as $kg => $vg)
                                             <tr>
                                                 <td>
-                                                    <a href="javascript:" class="faculty-list" data-toggle="modal" data-target="#exampleModalCenter">
-                                                        <img src="{{asset('storage/users/default.png')}}" alt="alumni">Nama Alumni
+                                                    <a href="javascript:" class="faculty-list" data-toggle="modal" data-target="#{{$kg.$vg->id.slugify($vg->user->name)}}">
+                                                        <img src="{{asset('storage/'.$vg->user->profile_photo_path)}}" alt="alumni">{{$vg->user->name}}
                                                     </a>
                                                 </td>
-                                                <td>Computer</td>
-                                                <td>2014</td>
+                                                <td>
+                                                    <p>{{$faculty->name}}</p>
+                                                    <p><small>{{$vg->prody->name}}</small></p>
+                                                </td>
+                                                <td>{{$vg->start_at->format('Y')}}</td>
+                                                <div class="modal fade" id="{{$kg.$vg->id.slugify($vg->user->name)}}" tabindex="-1" role="dialog"
+                                                    aria-labelledby="{{$kg.$vg->id.slugify($vg->user->name)}}Title" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content text-left">
+                                                            <div class="modal-body">
+                                                                <head class="detail-alumni">
+                                                                    <div class="d-flex content-center align-items-center">
+                                                                        <img class="img-circles mr-4" src="{{asset('storage/'.$vg->user->profile_photo_path)}}" alt="alumni">
+                                                                        <div class="flex-1">
+                                                                            <h5>{{$vg->user->name}}</h5>
+                                                                            <hr>
+                                                                            <p>{{$faculty->name}} - {{$vg->prody->name}}</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </head>
+                                                                <body>
+                                                                    <h6>Pengalam Kerja</h6>
+                                                                    <div class="row">
+                                                                        @for ($i = 0; $i < 2; $i++)
+                                                                            <div class="col-12">
+                                                                                <div class="card border-primary my-2">
+                                                                                    <div class="card-body">
+                                                                                        <h6 class="card-title">Rumah Sakit Keluarga {{$i}}</h6>
+                                                                                        <p class="card-text"><small>Jabatan: <b>Kepala Dokter Gigi</small></b></p>
+                                                                                        @if ($i !== 0)
+                                                                                            <p class="card-text"><small>Durasi : <b>2012 - presnt (8 thn)</small></b></p>
+                                                                                        @else
+                                                                                            <p class="card-text"><small>Durasi : <b>2010 - 2012 (2 thn)</small></b></p>
+                                                                                        @endif
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        @endfor
+                                                                    </div>
+                                                                    <h6>Pendidikan</h6>
+                                                                    <div class="row">
+                                                                        @for ($i = 0; $i < 2; $i++)
+                                                                            <div class="col-12">
+                                                                                <div class="card border-primary my-2">
+                                                                                    <div class="card-body">
+                                                                                        <h6 class="card-title">Sekolah ke {{$i}}</h6>
+                                                                                        <p class="card-text"><small>Jabatan: <b>Kepala Dokter Gigi</small></b></p>
+                                                                                        @if ($i !== 0)
+                                                                                            <p class="card-text"><small>Durasi : <b>2012 - presnt (8 thn)</small></b></p>
+                                                                                        @else
+                                                                                            <p class="card-text"><small>Durasi : <b>2010 - 2012 (2 thn)</small></b></p>
+                                                                                        @endif
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        @endfor
+                                                                    </div>
+                                                                    <h6>Sertifikat</h6>
+                                                                    <div class="row">
+                                                                        @for ($i = 0; $i < 2; $i++)
+                                                                            <div class="col-12">
+                                                                                <div class="card border-primary my-2">
+                                                                                    <div class="card-body">
+                                                                                        <h6 class="card-title">Sertifikat ke {{$i}}</h6>
+                                                                                        <p class="card-text"><small>Di sini isi detailnya</small></p>
+                                                                                        @if ($i !== 0)
+                                                                                            <p class="card-text"><small>Tahun : <b>2012</small></b></p>
+                                                                                        @else
+                                                                                            <p class="card-text"><small>Tahun : <b>2010</small></b></p>
+                                                                                        @endif
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        @endfor
+                                                                    </div>
+                                                                </body>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </tr>
-                                        @endfor
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -90,83 +168,6 @@
         </div>
     </div>
     <!--== Blog Page Content End ==-->
-
-    {{-- Modal Detail --}}
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <head class="detail-alumni">
-                        <div class="d-flex content-center align-items-center">
-                            <img class="img-circles mr-4" src="{{asset('storage/users/default.png')}}" alt="alumni">
-                            <div class="flex-1">
-                                <h5>Nama Saya .Drg</h5>
-                                <hr>
-                                <p>Fakultas Dokter - Dokter Gigi</p>
-                            </div>
-                        </div>
-                    </head>
-                    <body>
-                        <h6>Pengalam Kerja</h6>
-                        <div class="row">
-                            @for ($i = 0; $i < 2; $i++)
-                                <div class="col-12">
-                                    <div class="card border-primary my-2">
-                                        <div class="card-body">
-                                            <h6 class="card-title">Rumah Sakit Keluarga {{$i}}</h6>
-                                            <p class="card-text"><small>Jabatan: <b>Kepala Dokter Gigi</small></b></p>
-                                            @if ($i !== 0)
-                                                <p class="card-text"><small>Durasi : <b>2012 - presnt (8 thn)</small></b></p>
-                                            @else
-                                                <p class="card-text"><small>Durasi : <b>2010 - 2012 (2 thn)</small></b></p>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            @endfor
-                        </div>
-                        <h6>Pendidikan</h6>
-                        <div class="row">
-                            @for ($i = 0; $i < 2; $i++)
-                                <div class="col-12">
-                                    <div class="card border-primary my-2">
-                                        <div class="card-body">
-                                            <h6 class="card-title">Sekolah ke {{$i}}</h6>
-                                            <p class="card-text"><small>Jabatan: <b>Kepala Dokter Gigi</small></b></p>
-                                            @if ($i !== 0)
-                                                <p class="card-text"><small>Durasi : <b>2012 - presnt (8 thn)</small></b></p>
-                                            @else
-                                                <p class="card-text"><small>Durasi : <b>2010 - 2012 (2 thn)</small></b></p>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            @endfor
-                        </div>
-                        <h6>Sertifikat</h6>
-                        <div class="row">
-                            @for ($i = 0; $i < 2; $i++)
-                                <div class="col-12">
-                                    <div class="card border-primary my-2">
-                                        <div class="card-body">
-                                            <h6 class="card-title">Sertifikat ke {{$i}}</h6>
-                                            <p class="card-text"><small>Di sini isi detailnya</small></p>
-                                            @if ($i !== 0)
-                                                <p class="card-text"><small>Tahun : <b>2012</small></b></p>
-                                            @else
-                                                <p class="card-text"><small>Tahun : <b>2010</small></b></p>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            @endfor
-                        </div>
-                    </body>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 
 @section('headers')

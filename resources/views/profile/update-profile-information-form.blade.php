@@ -80,7 +80,12 @@
 
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="birth_place" value="{{ __('Birth Place') }}" />
-            <x-jet-input id="birth_place" type="text" class="mt-1 block w-full" wire:model.defer="state.birth_place" />
+            {{-- <x-jet-input id="birth_place" type="text" class="mt-1 block w-full" wire:model.defer="state.birth_place" /> --}}
+            <select id="birth_place" type="text" class="p-2 rounded border w-full appearance-none" wire:model.defer="state.birth_place" required>
+                @foreach (App\Models\City::all() as $ck => $cv)
+                    <option value="{{$cv->nama}}" {!!$cv->nama == $state['birth_place'] ? 'selected' : ''!!}>{{$cv->nama}}</option>
+                @endforeach
+            </select>
             <x-jet-input-error for="birth_place" class="mt-2" />
         </div>
         
@@ -116,13 +121,23 @@
 
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="provincy" value="{{ __('Provincy') }}" />
-            <x-jet-input id="provincy" type="text" class="mt-1 block w-full" wire:model.defer="state.provincy" />
+            {{-- <x-jet-input id="provincy" type="text" class="mt-1 block w-full" wire:model.defer="state.provincy" /> --}}
+            <select id="provincy" type="text" class="p-2 rounded border w-full appearance-none" wire:model.defer="state.provincy" required>
+                @foreach (App\Models\Provience::all() as $pk => $pv)
+                    <option value="{{$pv->nama}}" {!!$pv->nama == $state['provincy'] ? 'selected' : ''!!}>{{$pv->nama}}</option>
+                @endforeach
+            </select>
             <x-jet-input-error for="provincy" class="mt-2" />
         </div>
 
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="city" value="{{ __('City') }}" />
-            <x-jet-input id="city" type="text" class="mt-1 block w-full" wire:model.defer="state.city" />
+            {{-- <x-jet-input id="city" type="text" class="mt-1 block w-full" wire:model.defer="state.city" /> --}}
+            <select id="city" type="text" class="p-2 rounded border w-full appearance-none" wire:model.defer="state.city" required>
+                @foreach (App\Models\City::all() as $k => $v)
+                    <option value="{{$v->nama}}" {!!$v->nama == $state['city'] ? 'selected' : ''!!}>{{$v->nama}}</option>
+                @endforeach
+            </select>
             <x-jet-input-error for="city" class="mt-2" />
         </div>
 
@@ -136,7 +151,7 @@
 
     <x-slot name="actions">
         <x-jet-action-message class="mr-3" on="saved">
-            {{ __('Saved.') }}
+            {{ __('Saved Successfuly.') }}
         </x-jet-action-message>
 
         <x-jet-button wire:loading.attr="disabled" wire:target="photo">

@@ -12,6 +12,6 @@ class Provience extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'name'
+        'nama'
     ];
 }
