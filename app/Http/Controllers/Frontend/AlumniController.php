@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faculty;
+use App\Models\Prody;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AlumniController extends Controller
@@ -12,9 +15,25 @@ class AlumniController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view("frontend.pages.alumni");
+        $faculty = Faculty::all();
+        $prody = Prody::all();
+        $users = User::with('graduates')
+            ->has('graduates');
+        if ($request->has('faculty') || $request->has('dept')) {
+            $users = $users->whereHas('graduates', function ($query) use($request) {
+                $query->whereFacultyId($request->faculty)->orWhere('prody_id', $request->dept);
+            });
+        }
+        $users = $users
+            ->orderByDesc('created_at')
+            ->paginate(20);
+        return view("frontend.pages.alumni", compact([
+            'users',
+            'faculty',
+            'prody'
+        ]));
     }
 
     /**
