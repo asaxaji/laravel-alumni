@@ -31,13 +31,13 @@
     <!--meta property="fb:admins" content="" /-->
     <!-- use this if you have  -->
     <meta property="og:type" content="website"> <!-- 'article' for single page  -->
-    <meta property="og:image" content="{{asset('assets/img/opengraph/fbphoto-476-476.png')}}">
+    <meta property="og:image" content="{{asset('storage/'.setting('site.icon'))}}">
     <!-- when you post this page url in facebook , this image will be shown -->
     <!-- facebook open graph ends here -->
 
     <!-- desktop bookmark -->
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{asset('assets/img/favicon/ms-icon-144x144.png')}}">
+    <meta name="msapplication-TileImage" content="{{asset('storage/'.setting('site.icon'))}}">
     <meta name="theme-color" content="#ffffff">
 
     <!-- icons & favicons -->
@@ -45,19 +45,19 @@
     <!-- this icon shows in browser toolbar -->
     <link rel="icon" type="image/x-icon" href="{{asset('storage/'.setting('site.icon'))}}">
     <!-- this icon shows in browser toolbar -->
-    <link rel="apple-touch-icon" sizes="57x57" href="{{asset('assets/img/favicon/apple-icon-57x57.png')}}">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{asset('assets/img/favicon/apple-icon-60x60.png')}}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('assets/img/favicon/apple-icon-72x72.png')}}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/favicon/apple-icon-76x76.png')}}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('assets/img/favicon/apple-icon-114x114.png')}}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{asset('assets/img/favicon/apple-icon-120x120.png')}}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{asset('assets/img/favicon/apple-icon-144x144.png')}}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('assets/img/favicon/apple-icon-152x152.png')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/img/favicon/apple-icon-180x180.png')}}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{asset('assets/img/favicon/android-icon-192x192.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/favicon/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{asset('assets/img/favicon/favicon-96x96.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/img/favicon/favicon-16x16.png')}}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{asset('storage/'.setting('site.icon'))}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('storage/'.setting('site.icon'))}}">
     <link rel="manifest" href="{{asset('assets/img/favicon/manifest.json')}}">
 
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.ico')}}">
