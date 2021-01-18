@@ -25,23 +25,21 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="directory-text-wrap">
-                            <h2>Now we have <strong class="funfact-count">485274</strong> alumni </h2>
+                            <h2>Now we have <strong class="funfact-count">{{$users->count()}}</strong> alumni </h2>
                             <div class="table-search-area">
-                                <form action="#">
+                                <form action="{{route('alumni.index')}}" method="GET">
                                     <input type="search" placeholder="Masukkan kata kunci..">
                                     <select name="faculty">
                                         <option selected disabled>Fakultas</option>
-                                        <option value="cmt">Kedoktran</option>
-                                        <option value="cmt">Teknik</option>
-                                        <option value="cmt">Hukum</option>
+                                        @foreach ($faculty as $fk => $fv)
+                                            <option value="{{$fv->id}}">{{$fv->name}}</option>
+                                        @endforeach
                                     </select>
                                     <select name="dept">
                                         <option selected disabled>Jurusan</option>
-                                        <option value="cmt">Informatika</option>
-                                        <option value="cmt">Komputer</option>
-                                        <option value="cmt">Sipil</option>
-                                        <option value="cmt">Mesin</option>
-                                        <option value="cmt">Arsitek</option>
+                                        @foreach ($prody as $pk => $pv)
+                                            <option value="{{$pv->id}}">{{$pv->name}}</option>
+                                        @endforeach
                                     </select>
                                     <button class="btn btn-brand">Search</button>
                                 </form>
@@ -57,33 +55,32 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @for ($i = 0; $i < 50; $i++)
+                                        @foreach ($users as $ku => $vu)
                                             <tr>
                                                 <td>
                                                     <a href="javascript:" class="faculty-list" data-toggle="modal" data-target="#exampleModalCenter">
-                                                        <img src="{{asset('storage/users/default.png')}}" alt="alumni">Nama Alumni
+                                                        <img src="{{asset('storage/'.$vu->profile_photo_path)}}" alt="alumni">
+                                                        {{$vu->name}}
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <h6><b>Fakultas Teknik</b></h6>
-                                                    <p><i>Teknik Informatika</i></p>
+                                                    <h6><b>{{$vu->graduates->first()->faculty->name}}</b></h6>
+                                                    <p><i>{{$vu->graduates->first()->prody->name}}</i></p>
                                                 </td>
-                                                <td>2014</td>
+                                                <td>{{$vu->graduates->first()->end_at->format('Y')}}</td>
                                             </tr>
-                                        @endfor
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
-                            <p class="show-memeber text-right">
-                                Show <span>30</span> of <span>12487 Member</span>
-                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="pagination-wrap text-center">
+                        {{$users->links()}}
+                        {{-- <div class="pagination-wrap text-center">
                             <nav>
                                 <ul class="pagination">
                                     <li class="page-item"><a class="page-link" href="#"><i
@@ -97,7 +94,7 @@
                                                 class="fa fa-angle-right"></i></a></li>
                                 </ul>
                             </nav>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
