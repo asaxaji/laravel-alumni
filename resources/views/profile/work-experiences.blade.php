@@ -74,13 +74,13 @@
         <x-jet-dialog-modal wire:model="addWorkExperiences">
             {{-- <form wire:submit="addWorks"> --}}
                 <x-slot name="title">
-                    {{ __('Logout Other Browser Sessions') }}
+                    {{ __('Add Work Experience') }}
                 </x-slot>
 
                 <x-slot name="content">
-                    {{ __('Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices.') }}
+                    {{ __('Silahkan isi form di bawah untuk menambahkan pengalaman kerja kamu') }}
                     <div>
-                        <x-jet-input id="company_name" type="text" wire:model="work.company_name" class="mt-1 block w-full" placeholder="Nama Perusahaan" />
+                        <x-jet-input id="company_name" type="text" wire:model="work.company_name" class="mt-1 blok w-full" placeholder="Nama Perusahaan" />
                         <x-jet-input-error for="company_name" class="mt-2" />
                     </div>
                     <div class="block mt-3">

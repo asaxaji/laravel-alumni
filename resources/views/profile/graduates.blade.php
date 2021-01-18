@@ -21,9 +21,12 @@
 
                         <div class="ml-3 flex-1">
                             <div class="text-md cursor-pointer text-gray-600" x-on:click.prevent="show=!show">
-                                <b>{!!!empty($vw->title) ? $vw->title : $vw->university_id->name!!}</b>
-                                @if ($vw->faculty_id->name && $vw->prody_id->name)
-                                    <small>{{$vw->faculty_id->name}} - {{$vw->prody_id->name}}</small>
+                                <b>{!!!empty($vw->title) ? $vw->title : $vw->university->name!!}</b>
+                            </div>
+
+                            <div class="text-md cursor-pointer text-gray-600" x-on:click.prevent="show=!show">
+                                @if (!empty($vw->faculty->name) && !empty($vw->prody->name))
+                                    <small>{{$vw->faculty->name}} - {{$vw->prody->name}}</small>
                                 @endif
                             </div>
 
@@ -75,7 +78,7 @@
                             {{-- <livewire:form.career-form :key="$vw->id" :career="$vw" /> --}}
                         </div>
                         <div>
-                            <p class="text-red-500 cursor-pointer mx-5" wire:click="deleteWork({!!$vw->id!!})">Hapus</p>
+                            <p class="text-red-500 cursor-pointer mx-5" wire:click="deleteGraduate({!!$vw->id!!})">Hapus</p>
                         </div>
                     @endif
                 </div>
@@ -84,10 +87,77 @@
         </div>
 
         <div class="flex items-center mt-5">
-            <x-jet-button wire:click="addWorkExperience" wire:loading.attr="disabled">
+            <x-jet-button wire:click="showAddForm" wire:loading.attr="disabled">
                 {{ __('Add') }}
             </x-jet-button>
         </div>
+
+        {{-- Modal Add --}}
+        <x-jet-dialog-modal wire:model="modalAddGraduates">
+            {{-- <form wire:submit="addWorks"> --}}
+                <x-slot name="title">
+                    {{ __('Logout Other Browser Sessions') }}
+                </x-slot>
+
+                <x-slot name="content">
+                    {{ __('Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices.') }}
+                    <div>
+                        <x-jet-label for="faculty_id" value="{{ __('Faculty') }}" />
+                        {{-- <x-jet-input id="jabatan" type="text" wire:model="graduate.jabatan" class="mt-1 block w-full" placeholder="Jabatan" /> --}}
+                        <select id="faculty_id" type="text" wire:model="graduate.faculty_id" class="p-2 rounded border w-full appearance-none">
+                            <option selected>--- Fakultas ---</option>
+                            @foreach ($faculty as $fk => $fv)
+                                <option value="{!!$fv->id!!}">{!!$fv->name!!}</option>
+                            @endforeach
+                        </select>
+                        <x-jet-input-error for="faculty" class="mt-2" />
+                    </div>
+                    <div class="block mt-3">
+                        <x-jet-label for="prody_id" value="{{ __('Prody') }}" />
+                        {{-- <x-jet-input id="jabatan" type="text" wire:model="graduate.jabatan" class="mt-1 block w-full" placeholder="Jabatan" /> --}}
+                        <select id="prody_id" type="text" wire:model="graduate.prody_id" class="p-2 rounded border w-full appearance-none">
+                            <option selected>--- Prodi ---</option>
+                            @foreach ($prody as $pk => $pv)
+                                <option value="{!!$pv->id!!}">{!!$pv->name!!}</option>
+                            @endforeach
+                        </select>
+                        <x-jet-input-error for="prody_id" class="mt-2" />
+                    </div>
+                    <div>
+                        <x-jet-label for="note" value="{{ __('Catatan') }}" />
+                        {{-- <x-jet-input id="university_name" type="text" wire:model="graduate.university_name" class="mt-1 block w-full" placeholder="Nama Perusahaan" />--}}
+                        <textarea id="note" type="text" wire:model="graduate.note" class="p-2 rounded border w-full appearance-none" cols="30" rows="10"></textarea>
+                        <x-jet-input-error for="note" class="mt-2" />
+                    </div>
+                    <div class="block mt-3">
+                        <x-jet-label for="start_at" value="{{ __('Start At') }}" />
+                        <x-jet-input id="start_at" type="date" wire:model="graduate.start_at" class="mt-1 block w-full" placeholder="Mulai Dari" />
+                        <x-jet-input-error for="start_at" class="mt-2" />
+                    </div>
+                    <div class="block mt-3">
+                        <label for="is_cureent" class="flex items-center">
+                            <input id="is_cureent" type="checkbox" class="form-checkbox" wire:model="graduate.is_cureent">
+                            <span class="ml-2 text-sm text-gray-600">{{ __('Present') }}</span>
+                        </label>
+                    </div>
+                    <div class="block mt-3" x-show="!isPresent">
+                        <x-jet-label for="end_at" value="{{ __('End At') }}" />
+                        <x-jet-input id="end_at" type="date" wire:model="graduate.end_at" class="mt-1 block w-full" placeholder="Mulai Dari" />
+                        <x-jet-input-error for="end_at" class="mt-2" />
+                    </div>
+                </x-slot>
+
+                <x-slot name="footer">
+                    <x-jet-secondary-button wire:click="$toggle('modalAddGraduates')" wire:loading.attr="disabled">
+                        {{ __('Close') }}
+                    </x-jet-secondary-button>
+
+                    <x-jet-button class="ml-2" wire:click="addGraduates" wire:loading.attr="disabled">
+                        {{ __('Save') }}
+                    </x-jet-button>
+                </x-slot>
+            {{-- </form> --}}
+        </x-jet-dialog-modal>
 
     </x-slot>
 </x-jet-action-section>
