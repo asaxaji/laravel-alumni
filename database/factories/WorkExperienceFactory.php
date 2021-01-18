@@ -28,7 +28,7 @@ class WorkExperienceFactory extends Factory
         $company = Company::first();
         return [
             'user_id' => $user->id,
-            'company_id' => $company->id,
+            'company_id' => 'PT.'.$company->name,
             'jabatan' => 'isi jabatan',
             'is_cureent' => false,
             'start_at' => Carbon::now()->addYear(-1),
