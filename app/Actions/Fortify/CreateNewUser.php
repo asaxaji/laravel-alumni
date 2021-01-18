@@ -30,6 +30,7 @@ class CreateNewUser implements CreatesNewUsers
             'lastname' => ['required', 'string', 'max:255'],
             'nrp' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'whatsapp' => ['required', 'string', 'max:255'],
             'password' => $this->passwordRules(),
         ])->validate();
 
@@ -38,6 +39,7 @@ class CreateNewUser implements CreatesNewUsers
             'lastname' => $input['lastname'],
             'nrp' => $input['nrp'],
             'email' => $input['email'],
+            'whatsapp' => $input['whatsapp'],
             'password' => Hash::make($input['password']),
         ];
 

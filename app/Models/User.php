@@ -75,6 +75,10 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
         'profile_photo_url',
     ];
 
+    public function progressProfile() {
+        return null;
+    }
+
     public function alumniId()
     {
         return $this->belongsTo(Alumni::class, 'alumni_id', 'id');
@@ -96,7 +100,7 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
     
     public function workExperiences()
     {
-        return $this->hasMany(WorkExperience::class, 'user_id', 'id');
+        return $this->hasMany(WorkExperience::class, 'user_id', 'id')->orderByDesc('id');
     }
 
     public function events()

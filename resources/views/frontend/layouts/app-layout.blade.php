@@ -178,7 +178,7 @@
 
     <!-- custom js: custom js file is added for easy custom js code  -->
     <script src="{{asset('assets/js/custom.js')}}"></script>
-    <script id="switcherhandle" src="{{asset('assets/switcher/switcher.js')}}"></script>
+    {{-- <script id="switcherhandle" src="{{asset('assets/switcher/switcher.js')}}"></script> --}}
 
     <!-- custom js: custom scripts for theme style switcher for demo purpose  -->
 

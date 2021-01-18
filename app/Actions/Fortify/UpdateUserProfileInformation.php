@@ -31,12 +31,27 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->updateProfilePhoto($input['photo']);
         }
 
-        $updateUser = [
-            'firstname' => $input['firstname'],
-            'lastname' => $input['lastname'],
-            'nrp' => $input['nrp'],
-            'email' => $input['email'],
+        $fields = [
+            'firstname',
+            'lastname',
+            'nrp',
+            'email',
+            'agama',
+            'birth_place',
+            'birth_date',
+            'phone_home',
+            'phone_number',
+            'whatsapp',
+            'address',
+            'provincy',
+            'city',
+            'zip_code',
         ];
+
+        $updateUser = [];
+        foreach ($fields as $key => $value) {
+            $updateUser[$value] = $input[$value];
+        }
 
         if ($input['email'] !== $user->email &&
             $user instanceof MustVerifyEmail) {

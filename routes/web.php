@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\FacultyController;
 use App\Http\Controllers\Frontend\EventController;
 use App\Http\Controllers\Frontend\OrganizationController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\ServiceController;
 
 /*
@@ -37,9 +38,12 @@ Route::resource('/contact', ContactController::class);
 // Not Page
 Route::get('/disable-auth', [HomeController::class, 'disableAuth'])->name('disauth.index');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::resource('/users/profile', UserController::class)->names('users.profile');
+});
 
 Route::group(['prefix' => 'web-admin'], function () {
     Voyager::routes();

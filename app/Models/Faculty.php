@@ -26,4 +26,9 @@ class Faculty extends Model
     {
         return $this->hasMany(Prody::class, 'faculty_id', 'id');
     }
+
+    public function graduates()
+    {
+        return $this->hasMany(Graduates::class, 'faculty_id', 'id')->orderByDesc('created_at');
+    }
 }

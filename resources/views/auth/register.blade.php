@@ -30,6 +30,11 @@
             </div>
 
             <div class="mt-4">
+                <x-jet-label for="whatsapp" value="{{ __('Whatsapp Number') }}" />
+                <x-jet-input id="whatsapp" class="block mt-1 w-full" type="text" name="whatsapp" :value="old('whatsapp')" required />
+            </div>
+
+            <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>

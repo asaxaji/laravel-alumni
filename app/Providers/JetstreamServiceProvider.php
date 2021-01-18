@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Actions\Jetstream\DeleteUser;
+use App\Http\Controllers\Frontend\UserController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -59,7 +60,7 @@ class JetstreamServiceProvider extends ServiceProvider
         });
         
         Fortify::authenticateUsing(function (Request $request) {
-            $user = User::whereEmail($request->email)->orWhere('nrp', $request->email)->whereStatus('enable')->first();
+            $user = User::whereEmail($request->email)->orWhere('nrp', $request->email)->where('status', '!=','disable')->first();
         
             if ($user && Hash::check($request->password, $user->password)) {
                 return $user;
