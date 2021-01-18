@@ -946,7 +946,7 @@ class UserController extends Controller
     {
         $user = ModelsUser::findOrFail($id);
         $user->update([
-            'status' => 'enable'
+            'status' => 'disable'
         ]);
         Mail::to($request->user())->send(new DeclineUserAccount($user));
         return redirect()->back();
