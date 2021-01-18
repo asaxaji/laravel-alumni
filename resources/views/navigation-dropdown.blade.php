@@ -20,6 +20,9 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                     @if ($user->status === 'enable')
+                        <x-jet-nav-link href="{{ route('dashboard.blog') }}" :active="request()->routeIs('dashboard.blog')">
+                            {{ __('Blog') }}
+                        </x-jet-nav-link>
                         <x-jet-nav-link href="{{ route('dashboard') }}">
                             {{ __('Career') }}
                         </x-jet-nav-link>

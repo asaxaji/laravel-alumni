@@ -270,16 +270,20 @@
                 <div class="pull-right">
                     @can('edit', $dataTypeContent)
                         @if ($dataTypeContent->status !== 'enable')
-                            <a href="#" class="btn btn-success">
-                                <span class="glyphicon glyphicon-ok"></span>&nbsp;
-                                {{ __('Accept') }}
-                            </a>
-                        @endif
-                        @if ($dataTypeContent->status !== 'enable')
-                            <a href="#" class="btn btn-danger">
-                                <span class="glyphicon glyphicon-remove"></span>&nbsp;
-                                {{ __('Decline') }}
-                            </a>
+                            <form action="{{route('voyager.user.confirm', [$dataTypeContent->id])}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-success">
+                                    <span class="glyphicon glyphicon-ok"></span>&nbsp;
+                                    {{ __('Accept') }}
+                                </button>
+                            </form>
+                            <form action="{{route('voyager.user.decline', [$dataTypeContent->id])}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span>&nbsp;
+                                    {{ __('Decline') }}
+                                </button>
+                            </form>
                         @endif
                     @endcan
                 </div>

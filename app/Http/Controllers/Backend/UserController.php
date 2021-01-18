@@ -16,6 +16,11 @@ use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
 use App\Http\Controllers\Voyager\Traits\BreadRelationshipParser;
+use App\Mail\AcceptUserAccount;
+use App\Mail\DeclineUserAccount;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
+use TCG\Voyager\Models\User as ModelsUser;
 
 class UserController extends Controller
 {
@@ -925,5 +930,25 @@ class UserController extends Controller
 
         // No result found, return empty array
         return response()->json([], 404);
+    }
+
+    public function acceptUser(Request $request, $id)
+    {
+        $user = ModelsUser::findOrFail($id);
+        $user->update([
+            'status' => 'enable'
+        ]);
+        Mail::to($request->user())->send(new AcceptUserAccount($user));
+        return redirect()->back();
+    }
+
+    public function declineUser(Request $request, $id)
+    {
+        $user = ModelsUser::findOrFail($id);
+        $user->update([
+            'status' => 'enable'
+        ]);
+        Mail::to($request->user())->send(new DeclineUserAccount($user));
+        return redirect()->back();
     }
 }

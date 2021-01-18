@@ -8,4 +8,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
     Route::resource('/users/profile', UserController::class)->names('users.profile');
+    Route::get('/dashboard/blog', function () {
+        return view('livewire.blog.browse-component');
+    })->name('dashboard.blog');
 });
