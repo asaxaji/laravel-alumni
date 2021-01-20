@@ -189,7 +189,7 @@
                                 @forelse ($dataTypeContent->workExperiences as $kw => $vw)
                                     <div class="panel-heading" style="border-bottom:0;">
                                         <h3 class="panel-title">
-                                            <a href="{{route('voyager.companies.show', [$vw->company->id])}}">{{$vw->company->name}}</a>
+                                            {{$vw->company_name}}
                                         </h3>
                                     </div>
                                     <div class="panel-body" style="padding-top:0;">
