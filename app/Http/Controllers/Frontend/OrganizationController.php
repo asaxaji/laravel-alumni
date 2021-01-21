@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\AboutPage;
 use Illuminate\Http\Request;
 
 class OrganizationController extends Controller
@@ -14,7 +15,10 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        return view("frontend.pages.about");
+        $about = AboutPage::first();
+        return view("frontend.pages.about", compact([
+            'about'
+        ]));
     }
 
     /**

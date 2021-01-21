@@ -15,6 +15,10 @@ class CreateAboutPagesTable extends Migration
     {
         Schema::create('about_pages', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('body');
+            $table->string('image');
+            $table->text('image_structures');
             $table->timestamps();
         });
     }

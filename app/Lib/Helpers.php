@@ -1,6 +1,7 @@
 <?php
 
 use Carbon\Carbon;
+use Illuminate\Support\Arr;
 
 if (!function_exists('isURL')) {
     function isURL(String $url)
@@ -35,5 +36,13 @@ if (!function_exists('dateFormat')) {
     function dateFormat(String $date)
     {
         return Carbon::parse($date);
+    }
+}
+
+if (!function_exists('parseImages')) {
+    function parseImages(array $array, array $add = [], array $except = []) {
+        if (count($add) > 0) $array = Arr::collapse($array, $add);
+        if (count($except) > 0) $array = Arr::except($array, $except);
+        return $array;
     }
 }
