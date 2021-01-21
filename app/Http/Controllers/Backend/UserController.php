@@ -934,21 +934,43 @@ class UserController extends Controller
 
     public function acceptUser(Request $request, $id)
     {
-        $user = ModelsUser::findOrFail($id);
-        $user->update([
-            'status' => 'enable'
-        ]);
-        Mail::to($request->user())->send(new AcceptUserAccount($user));
+        if ($request->has('ids')) {
+            $userIds = explode(',', $request->ids);
+            foreach ($userIds as $ku => $vu) {
+                $user = ModelsUser::findOrFail($vu);
+                $user->update([
+                    'status' => 'enable'
+                ]);
+                Mail::to($user)->send(new AcceptUserAccount($user));
+            }
+        } else {
+            $user = ModelsUser::findOrFail($id);
+            $user->update([
+                'status' => 'enable'
+            ]);
+            Mail::to($user)->send(new AcceptUserAccount($user));
+        }
         return redirect()->back();
     }
 
     public function declineUser(Request $request, $id)
     {
-        $user = ModelsUser::findOrFail($id);
-        $user->update([
-            'status' => 'disable'
-        ]);
-        Mail::to($request->user())->send(new DeclineUserAccount($user));
+        if ($request->has('ids')) {
+            $userIds = explode(',', $request->ids);
+            foreach ($userIds as $ku => $vu) {
+                $user = ModelsUser::findOrFail($vu);
+                $user->update([
+                    'status' => 'disable'
+                ]);
+                Mail::to($user)->send(new DeclineUserAccount($user));
+            }
+        } else {
+            $user = ModelsUser::findOrFail($id);
+            $user->update([
+                'status' => 'disable'
+            ]);
+            Mail::to($user)->send(new DeclineUserAccount($user));
+        }
         return redirect()->back();
     }
 }

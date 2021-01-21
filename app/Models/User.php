@@ -11,6 +11,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use TCG\Voyager\Models\Post;
+use TCG\Voyager\Models\Role;
 
 class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
 {
@@ -77,6 +78,11 @@ class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
 
     public function progressProfile() {
         return null;
+    }
+
+    public function role()
+    {
+        return $this->hasOne(Role::class, 'id', 'role_id');
     }
 
     public function alumniId()

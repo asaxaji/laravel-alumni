@@ -47,7 +47,7 @@
         });
         $countUserDisableContent = $userDisableContent->count();
         $userWaitingContent = $dataTypeContent->reject(function ($user) {
-            return $user->status !== 'waiting';
+            return $user->role->name !== 'user' && $user->status !== 'waiting';
         });
         $countUserWaitingContent = $userWaitingContent->count();
     @endphp
@@ -59,26 +59,38 @@
                     <div class="panel-body">
                         <div>
                             <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
-                                        data-toggle="tab">Active&nbsp;&nbsp;<span class="label label-warning">{{$countUserEnableContent}}</span></a></li>
-                                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
-                                        data-toggle="tab">Disable&nbsp;&nbsp;<span class="label label-warning">{{$countUserDisableContent}}</span></a></li>
-                                <li role="presentation"><a href="#messages" aria-controls="messages" role="tab"
-                                        data-toggle="tab">Waiting&nbsp;&nbsp;<span class="label label-warning">{{$countUserWaitingContent}}</span></a></li>
+                                <li role="presentation" class="active">
+                                    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                                        Active&nbsp;&nbsp;<span class="label label-warning">{{$countUserEnableContent}}</span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                                        Disable&nbsp;&nbsp;<span class="label label-warning">{{$countUserDisableContent}}</span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
+                                        Waiting&nbsp;&nbsp;<span class="label label-warning">{{$countUserWaitingContent}}</span>
+                                    </a>
+                                </li>
                             </ul>
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="home">
                                     @includeIf('vendor.voyager.users.partials.body-table', [
+                                        'status' => 'enable',
                                         'dataTypeContent' => $userEnableContent
                                     ])
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="profile">
                                     @includeIf('vendor.voyager.users.partials.body-table', [
+                                        'status' => 'disable',
                                         'dataTypeContent' => $userDisableContent
                                     ])
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="messages">
                                     @includeIf('vendor.voyager.users.partials.body-table', [
+                                        'status' => 'waiting',
                                         'dataTypeContent' => $userWaitingContent
                                     ])
                                 </div>
