@@ -47,7 +47,7 @@
         });
         $countUserDisableContent = $userDisableContent->count();
         $userWaitingContent = $dataTypeContent->reject(function ($user) {
-            return $user->role->name !== 'user' && $user->status !== 'waiting';
+            return $user->status !== 'waiting';
         });
         $countUserWaitingContent = $userWaitingContent->count();
     @endphp

@@ -25,6 +25,7 @@ use App\Http\Controllers\ServiceController;
 Route::get('/welcome', function() { return view('welcome'); });
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/gallery', [HomeController::class, 'gallery'])->name('gallery.index');
+Route::get('/gallery/{slug}', [HomeController::class, 'galleryDetail'])->name('gallery.show');
 Route::resource('/blog', BlogController::class);
 Route::resource('/career', CareerController::class);
 Route::resource('/alumni', AlumniController::class);

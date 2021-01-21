@@ -195,7 +195,7 @@
                                     <div class="panel-body" style="padding-top:0;">
                                         <p><span class="font-weight-bold">Jabatan :</span> {{$vw->jabatan}}</p>
                                         <p><span class="font-weight-bold">Tanggal :</span> {{dateFormat($vw->start_at)->format('d M Y')}} - {!!$vw->is_cureent ? 'present' : dateFormat($vw->end_at)->format('d M Y')!!}</p>
-                                        <p><span class="font-weight-bold">Durasi :</span> {{dateFormat($vw->start_at)->diffInYears($vg->end_at)}} tahun</p>
+                                        <p><span class="font-weight-bold">Durasi :</span> {{dateFormat($vw->start_at)->diffInMonths($vg->end_at)}} bulan</p>
                                     </div>
                                 @empty
                                     

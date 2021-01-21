@@ -14,6 +14,8 @@ class Gallery extends Model
     protected $fillable = [
         'author_id',
         'name',
+        'slug',
+        'body',
         'type',
         'image',
         'video_url',

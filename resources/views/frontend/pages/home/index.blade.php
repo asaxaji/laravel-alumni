@@ -22,7 +22,7 @@
     <!--== Job Opportunity Area End ==-->
 
     <!--== Gallery Area Start ==-->
-    @includeWhen($galleries->count() > 0, 'frontend.pages.home.gallery', [$galleries])
+    {{-- @includeWhen($galleries->count() > 0, 'frontend.pages.home.gallery', [$galleries]) --}}
     <!--== Gallery Area Start ==-->
 
     <!--== Blog Area Start ==-->

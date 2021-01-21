@@ -46,3 +46,16 @@ if (!function_exists('parseImages')) {
         return $array;
     }
 }
+
+if (!function_exists('getThumbImageGalleries')) {
+    function getThumbImageGalleries($array) {
+        return $array->map(function ($map) {
+            return (object)[
+                'name' => $map->name,
+                'slug' => $map->slug,
+                'image' => $map->image,
+                'created_at' => $map->created_at,
+            ];
+        });
+    }
+}

@@ -17,6 +17,8 @@ class CreateGalleriesTable extends Migration
             $table->id();
             $table->foreignId('author_id')->nullable();
             $table->string('name');
+            $table->string('slug');
+            $table->text('body')->nullable();
             $table->enum('type', ['image', 'video'])->default('image');
             $table->string('image')->nullable();
             $table->string('video_url')->nullable();

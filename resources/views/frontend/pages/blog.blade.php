@@ -2,7 +2,7 @@
 
 @section('views')
     <!--== Page Title Area Start ==-->
-    <section id="page-title-area">
+    {{-- <section id="page-title-area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 m-auto text-center">
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--== Page Title Area End ==-->
 
     <!--== Blog Page Content Start ==-->

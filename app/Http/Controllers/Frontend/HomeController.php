@@ -118,6 +118,14 @@ class HomeController extends Controller
         ]));
     }
 
+    public function galleryDetail(Request $request, $id)
+    {
+        $gallery = Gallery::whereSlug($id)->firstOrFail();
+        return view('frontend.pages.gallery-detail', compact([
+            'gallery',
+        ]));
+    }
+
     public function disableAuth()
     {
         return view('auth.disable-login');

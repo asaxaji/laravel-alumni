@@ -1,67 +1,71 @@
 @extends('frontend.layouts.app-layout')
 
 @section('views')
-    <section id="gallery-area" class="section-padding bg-white">
+    <!--== Page Title Area Start ==-->
+    {{-- <section id="page-title-area">
         <div class="container">
-            <!--== Section Title Start ==-->
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-title">
-                        <h2>Our gallery</h2>
+                <div class="col-lg-8 m-auto text-center">
+                    <div class="page-title-content">
+                        <h1 class="h2">List Blog</h1>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam non perspiciatis mollitia obcaecati rem natus!
+                        </p>
+                        <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">Let&apos;s See</a>
                     </div>
                 </div>
             </div>
-            <!--== Section Title End ==-->
-
-            <!--== Gallery Container Warpper ==-->
-            <div class="gallery-content-wrapper">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!-- Gallery Menu Start -->
-                        {{-- <div class="gallery-menu text-center">
-                            <span class="active" data-filter="*">All</span>
-                            <span data-filter=".old">Old Memories</span>
-                            <span data-filter=".event">Event</span>
-                            <span data-filter=".pic">Our Picnic</span>
-                            <span class="d-none d-sm-inline-block" data-filter=".recent">Recent</span>
-                        </div> --}}
-                        <!-- Gallery Menu End -->
-
-                            <!-- Single Gallery Start -->
-                            @foreach ($galleries as $kg => $vg)
-                                @if ($vg->type === 'video')
-                                    <div class="col-lg-3  col-sm-6 pic">
-                                        <div class="single-gallery-item video gallery-bg-7">
-                                            <a href="{{$vg->video_url}}"
-                                                class="btn btn-video-play video-popup"><i class="fa fa-play"></i></a>
-                                        </div>
-                                    </div>
-                                @else
-                                    <div class="col-lg-3  col-sm-6 pic recent old">
-                                        <div class="single-gallery-item gallery-bg-8">
-                                            <div class="gallery-hvr-wrap">
-                                                <div class="gallery-hvr-text">
-                                                    <h4>{{$vg->name}}</h4>
-                                                    <p class="gallery-event-date">{{$vg->created_at->format('d M Y')}}</p>
-                                                </div>
-                                                <a href="{{asset('storage/'.$vg->image)}}" class="btn-zoom image-popup">
-                                                    <img src="{{asset('assets/img/zoom-icon.png')}}" alt="a">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
-                            <!-- Single Gallery End -->
-                            <div class="col-12 text-center content-center mt-5">
-                                {{$galleries->links()}}
-                            </div>
-                        </div>
-                        <!-- Gallery Item content End -->
-                    </div>
-                </div>
-            </div>
-            <!--== Gallery Container Warpper==-->
         </div>
-    </section>
+    </section> --}}
+    <!--== Page Title Area End ==-->
+
+    <!--== Blog Page Content Start ==-->
+    <div id="page-content-wrap">
+        <div class="blog-page-content-wrap section-padding">
+            <div class="container">
+                <div class="row">
+                    <!-- Blog content Area Start -->
+                    <div class="col-lg-12">
+                        <div class="blog-page-contant-start">
+                            <div class="row">
+                                <!--== Single Blog Post start ==-->
+                                @foreach ($galleries as $kb => $vb)
+                                    <div class="col-lg-4 col-md-4 my-4">
+                                        <article class="single-blog-post">
+                                            @php
+                                                $images = json_decode($vb->image);
+                                            @endphp
+                                            @if (count($images) > 0)
+                                                <figure class="blog-thumb">
+                                                    <div class="blog-thumbnail">
+                                                        <img src="{!!asset('storage/'.array_shift($images))!!}" alt="{{$vb->name}}" class="img-fluid">
+                                                    </div>
+                                                </figure>
+                                            @endif
+
+                                            <div class="blog-content">
+                                                <h3><a href="{{route('gallery.show', [$vb->slug])}}">{{Str::limit($vb->name, 20)}}</a></h3>
+                                                <a href="{{route('gallery.show', [$vb->slug])}}" class="btn btn-brand">Lihat</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                @endforeach
+                                <!--== Single Blog Post End ==-->
+                            </div>
+
+                            <!-- Pagination Start -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    {{$galleries->links()}}
+                                </div>
+                            </div>
+                            <!-- Pagination End -->
+                        </div>
+                    </div>
+                    <!-- Blog content Area End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== Blog Page Content End ==-->
 @endsection

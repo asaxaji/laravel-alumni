@@ -25,29 +25,23 @@
                     <!-- Gallery Menu End -->
 
                         <!-- Single Gallery Start -->
-                        @foreach ($galleries as $kg => $vg)
-                            @if ($vg->type === 'video')
-                                <div class="col-lg-3  col-sm-6 pic">
-                                    <div class="single-gallery-item video gallery-bg-{{$kg+1}}">
-                                        <a href="{{$vg->video_url}}"
-                                            class="btn btn-video-play video-popup"><i class="fa fa-play"></i></a>
-                                    </div>
-                                </div>
-                            @else
-                                <div class="col-lg-3  col-sm-6 pic recent old">
-                                    <div class="single-gallery-item gallery-bg-{{$kg+1}}">
-                                        <div class="gallery-hvr-wrap">
-                                            <div class="gallery-hvr-text">
-                                                <h4>{{$vg->name}}</h4>
-                                                <p class="gallery-event-date">{{$vg->created_at->format('d M Y')}}</p>
-                                            </div>
-                                            <a href="{{asset('storage/'.$vg->image)}}" class="btn-zoom image-popup">
-                                                <img src="{{asset('assets/img/zoom-icon.png')}}" alt="a">
-                                            </a>
+                        @foreach (getThumbImageGalleries($galleries) as $kg => $vg)
+                            @php
+                                $images = json_decode($vg->image);
+                            @endphp
+                            <div class="col-lg-3  col-sm-6 pic recent old">
+                                <div class="single-gallery-item" style="background-image: url('{!!asset('storage/'.array_shift($images))!!}')">
+                                    <div class="gallery-hvr-wrap">
+                                        <div class="gallery-hvr-text">
+                                            <h4>{{$vg->name}}</h4>
+                                            <p class="gallery-event-date">{{$vg->created_at->format('d M Y')}}</p>
                                         </div>
+                                        <a href="{{asset('gallery.show', $vg->slug)}}" class="btn-zoom image-popup">
+                                            <img src="{{asset('assets/img/zoom-icon.png')}}" alt="a">
+                                        </a>
                                     </div>
                                 </div>
-                            @endif
+                            </div>
                         @endforeach
                         <!-- Single Gallery End -->
                         <div class="col-12 text-center content-center mt-5">

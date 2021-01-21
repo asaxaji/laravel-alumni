@@ -1,4 +1,4 @@
-<section id="blog-area" class="section-padding">
+<section id="blog-area" class="section-padding bg-white">
     <div class="container">
         <!--== Section Title Start ==-->
         <div class="row">
