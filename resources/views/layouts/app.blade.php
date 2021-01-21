@@ -12,8 +12,10 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{asset('assets/vendor/floating-whatsapp/floating-wpp.min.css')}}">
 
         @livewireStyles
+        @includeIf('frontend.layouts.google.g-analytics')
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
@@ -38,6 +40,8 @@
         @stack('modals')
 
         @livewireScripts
+        <script src="{{asset('assets/vendor/jquery/jquery-3.3.1.min.js')}}"></script>
+        @includeIf('frontend.layouts.google.floating-wpp')
 
     </body>
 </html>

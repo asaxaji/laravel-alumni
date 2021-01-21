@@ -90,6 +90,8 @@
     <!--Offcanvas css -->
     <link rel="stylesheet" href="{{asset('assets/vendor/js-offcanvas/css/js-offcanvas.css')}}" media="all">
 
+    <link rel="stylesheet" href="{{asset('assets/vendor/floating-whatsapp/floating-wpp.min.css')}}">
+
     {{-- Swipper --}}
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -101,6 +103,8 @@
     <link id="cbx-style" data-layout="1" rel="stylesheet" href="{{asset('assets/css/style-default.min.css')}}" media="all">
 
     @yield('headers')
+
+    @includeIf('frontend.layouts.google.g-analytics')
 </head>
 
 <body>
@@ -181,8 +185,7 @@
     {{-- <script id="switcherhandle" src="{{asset('assets/switcher/switcher.js')}}"></script> --}}
 
     <!-- custom js: custom scripts for theme style switcher for demo purpose  -->
-
-
+    @includeIf('frontend.layouts.google.floating-wpp')
 
 </body>
 
