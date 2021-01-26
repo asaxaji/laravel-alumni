@@ -30,7 +30,7 @@
     <!--== Blog Area EndBlog ==-->
 
     <!--== FunFact Area Start ==-->
-    @includeIf('frontend.pages.home.funfact', ['show' => true])
+    @livewire('frontend.fun-fact')
     <!--== FunFact Area End ==-->
 @endsection
 

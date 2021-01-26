@@ -10,8 +10,9 @@
                             <div class="footer-about">
                                 <img src="{{asset('storage/'.setting('site.logo'))}}" alt="Logo" class="img-fluid">
                                 <p>{{setting('site.title')}}<br/>{{setting('site.description')}}</p>
-                                <a href="#">Phone: +8745 44 5444</a> <a href="#">Fax: +88474 156 362</a> <br> <a
-                                    href="#">Email: demoemail@demo.com</a>
+                                <a href="tel:{{setting('site.phone')}}">Phone: {{setting('site.phone')}}</a>
+                                <br>
+                                <a href="mailto:{{setting('site.email')}}">Email: {{setting('site.email')}}</a>
                             </div>
                         </div>
                     </div>

@@ -60,7 +60,7 @@
 </div><!-- /.modal -->
 
 <script>
-window.onload = function () {
+window.addEventListener('DOMContentLoaded', (event) => {
     // Bulk delete selectors
     var $bulkDeleteBtn = $('#bulk_delete_btn');
     var $bulkDeleteModal = $('#bulk_delete_modal');
@@ -134,5 +134,5 @@ window.onload = function () {
             toastr.warning('{{ __('Tidak ada data yang di pilih') }}');
         }
     })
-}
+})
 </script>
