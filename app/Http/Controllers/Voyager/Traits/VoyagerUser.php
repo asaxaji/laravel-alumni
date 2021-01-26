@@ -65,10 +65,11 @@ trait VoyagerUser
     {
         $role = Voyager::model('Role')->where('name', '=', $name)->first();
 
-        if ($role) {
-            $this->role()->associate($role);
-            $this->save();
-        }
+        // FIXME: Iam make error with associate function
+        // if ($role) {
+        //     $this->role()->associate($role);
+        //     $this->save();
+        // }
 
         return $this;
     }

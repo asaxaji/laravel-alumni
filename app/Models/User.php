@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Foundation\Auth\User as Authenticatable; // use this extends
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use TCG\Voyager\Models\Post;
 use TCG\Voyager\Models\Role;
+use App\Models\Voyager\User as VoyagerUser;
 
-class User extends \TCG\Voyager\Models\User implements MustVerifyEmail
+class User extends VoyagerUser implements MustVerifyEmail
 {
     use HasFactory;
     use Notifiable;
