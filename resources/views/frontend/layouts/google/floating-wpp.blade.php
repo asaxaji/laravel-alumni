@@ -5,7 +5,7 @@
         $('#floating-wpp').floatingWhatsApp({
             phone: '+6281316754575',
             popupMessage: 'Halo kak, apa yang bisa kami bantu?',
-            message: "Halo Admin {!!request()->getHost()!!},",
+            message: "Halo admin {!!request()->getHost()!!},",
             showPopup: true,
             showOnIE: false,
             headerTitle: 'Whatsapp!',

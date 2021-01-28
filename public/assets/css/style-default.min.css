@@ -4651,3 +4651,22 @@ img.img-circles {
 head.detail-alumni {
   border-bottom: 1px solid black;
 }
+
+/* Popup Modals */
+
+#close-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: rgba(225, 225, 225, 0.5);
+  padding: 9px;
+}
+
+#close-popup span {
+  font-size: 25px;
+}
+
+#popupModal img.img-fluid, modal-content {
+  border-radius: 10px;
+}
