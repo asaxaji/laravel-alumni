@@ -8,7 +8,7 @@
                         <img src="{{asset('assets/img/fun-fact/user.svg')}}" alt="Funfact">
                     </div>
                     <div class="funfact-info">
-                        <h5 class="funfact-count">4025</h5>
+                        <h5 class="funfact-count">{{$countType['user']}}</h5>
                         <p>Members</p>
                     </div>
                 </div>
@@ -22,8 +22,8 @@
                         <img src="{{asset('assets/img/fun-fact/picture.svg')}}" alt="Funfact">
                     </div>
                     <div class="funfact-info">
-                        <h5 class="funfact-count">8725</h5>
-                        <p>Photos</p>
+                        <h5 class="funfact-count">{{$countType['gallery']}}</h5>
+                        <p>Gallery</p>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                         <img src="{{asset('assets/img/fun-fact/event.svg')}}" alt="Funfact">
                     </div>
                     <div class="funfact-info">
-                        <h5><span class="funfact-count">231</span>+</h5>
+                        <h5><span class="funfact-count">{{$countType['event']}}</span></h5>
                         <p>Events</p>
                     </div>
                 </div>
@@ -50,8 +50,8 @@
                         <img src="{{asset('assets/img/fun-fact/medal.svg')}}" alt="Funfact">
                     </div>
                     <div class="funfact-info">
-                        <h5><span class="funfact-count">32</span>+</h5>
-                        <p>Awards</p>
+                        <h5><span class="funfact-count">{{$countType['career']}}</span></h5>
+                        <p>Careers</p>
                     </div>
                 </div>
             </div>

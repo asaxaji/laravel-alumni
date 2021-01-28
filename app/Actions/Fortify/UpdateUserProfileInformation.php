@@ -58,7 +58,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $this->updateVerifiedUser($user, $input);
         } else {
             $alumni = Alumni::find($user->alumni_id);
-            if ($alumni->exists()) $alumni->forceFill($updateUser)->save();
+            if (!empty($alumni->id)) $alumni->forceFill($updateUser)->save();
             $user->forceFill($updateUser)->save();
         }
     }
