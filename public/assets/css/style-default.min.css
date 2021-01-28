@@ -4667,6 +4667,6 @@ head.detail-alumni {
   font-size: 25px;
 }
 
-#popupModal img.img-fluid, modal-content {
+#popupModal img.img-fluid, .modal-content {
   border-radius: 10px;
 }
