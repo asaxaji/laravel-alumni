@@ -15,7 +15,11 @@ class CareerController extends Controller
      */
     public function index()
     {
-        $careers = Career::with('companyId')->wherePublished(true)->orderByDesc('created_at')->paginate(3);
+        $careers = Career::with('companyId')
+            ->whereHas('companyId')
+            ->wherePublished(true)
+            ->orderByDesc('created_at')
+            ->paginate(3);
         return view("frontend.pages.career", compact([
             'careers'
         ]));

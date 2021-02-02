@@ -34,7 +34,7 @@
             <div class="career-page-content-wrap section-padding">
                 <div class="container">
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-lg-12">
                             <div class="event-filter-area">
                                 <form action="index.html" class="form-inline">
@@ -67,11 +67,11 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="job-opportunity-wrapper">
                         <div class="row">
-                            @foreach ($careers as $ck => $cv)
+                            @forelse ($careers as $ck => $cv)
                                 <div class="col-lg-4 col-sm-6 text-center">
                                     <div class="single-job-opportunity">
                                         <div class="job-opportunity-text">
@@ -95,7 +95,9 @@
                                         @endif
                                     </div>
                                 </div>
-                            @endforeach
+                            @empty
+                                <h3 class="text-center">Tidak ada data</h3>
+                            @endforelse
                         </div>
 
                         <!-- Pagination Start -->

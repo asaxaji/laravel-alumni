@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Company;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CompanyFactory extends Factory
@@ -23,6 +24,7 @@ class CompanyFactory extends Factory
     {
         $name = $this->faker->name();
         return [
+            'author_id' => User::whereRoleId(1)->first(),
             'logo' => $this->faker->image('public/storage/faker', 349, 248, null, false),
             'name' => $name,
             'slug' => slugify($name),

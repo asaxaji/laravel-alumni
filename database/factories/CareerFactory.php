@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Career;
 use App\Models\Company;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -23,9 +24,10 @@ class CareerFactory extends Factory
      */
     public function definition()
     {
-        $company = Company::first();
+        $company = Company::inRandomOrder()->first();
         $title = $this->faker->streetName();
         return [
+            'author_id' => User::whereRoleId(1)->first(),
             'company_id' => $company->id,
             'title' => $title,
             'slug' => slugify($title),

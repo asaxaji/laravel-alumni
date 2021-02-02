@@ -58,12 +58,19 @@
                             <!-- Single Sidebar End -->
 
                             <!-- Single Sidebar Start -->
-                            <div class="single-sidebar-wrap">
-                                {{-- <h4 class="sidebar-title">Categories</h4> --}}
-                                <div class="sidebar-body">
-                                    <a href="#" class="btn btn-brand btn-block smooth-scroll">Lamar Mudah</a>
+                            @if (auth()->check())
+                                <div class="single-sidebar-wrap">
+                                    <div class="sidebar-body">
+                                        <a href="{{route('career.update', $career->id)}}" class="btn btn-brand btn-block smooth-scroll">Lamar Mudah</a>
+                                    </div>
                                 </div>
-                            </div>
+                            @else
+                                <div class="single-sidebar-wrap">
+                                    <div class="sidebar-body">
+                                        <a href="{{route('login')}}" class="btn btn-brand btn-block smooth-scroll">Masuk Untuk Melamar</a>
+                                    </div>
+                                </div>
+                            @endif
                             <!-- Single Sidebar End -->
                         </div>
                     </div>
@@ -83,26 +90,6 @@
                             <section class="blog-details">
                                 {!!$career->body!!}
                             </section>
-
-                            {{-- <footer class="post-share">
-                                <div class="row no-gutters ">
-                                    <div class="col-8">
-                                        <div class="shareonsocial">
-                                            <span>Share:</span>
-                                            <a href="#"><i class="fa fa-facebook"></i></a>
-                                            <a href="#"><i class="fa fa-twitter"></i></a>
-                                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                                            <a href="#"><i class="fa fa-vimeo"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-4 text-right">
-                                        <div class="post-like-comm">
-                                            <a href="#"><i class="fa fa-thumbs-o-up"></i>20</a>
-                                            <a href="#"><i class="fa fa-comment-o"></i>15</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </footer> --}}
                         </article>
                     </div>
                     <!-- Blog content Area End -->

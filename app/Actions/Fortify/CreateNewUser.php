@@ -56,7 +56,7 @@ class CreateNewUser implements CreatesNewUsers
             $createData['city'] = $findAlumni->city;
             $createData['zip_code'] = $findAlumni->zip_code;
         }
-        if (!empty($userRole->id)) $createData['role_id'] = $userRole->id;
+        $createData['role_id'] = $userRole->id;
         return User::create($createData);
     }
 }

@@ -24,12 +24,12 @@ class DatabaseSeeder extends Seeder
     {
         // Slider::factory(5)->create();
         // Event::factory(6)->create();
-        // Company::factory(3)->create();
-        // Career::factory(12)->create();
+        Company::factory(3)->create();
+        Career::factory(12)->create();
         // Alumni::factory(3)->create();
         // Service::factory(6)->create();
-        Graduates::factory(1)->create();
-        WorkExperience::factory(1)->create();
-        LifeCertificate::factory(3)->create();
+        // Graduates::factory(1)->create();
+        // WorkExperience::factory(1)->create();
+        // LifeCertificate::factory(3)->create();
     }
 }

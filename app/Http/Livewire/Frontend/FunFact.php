@@ -16,7 +16,7 @@ class FunFact extends Component
     {
         $this->countType = [];
         $this->countType = [
-            'user' => User::whereRoleId(2)->count(),
+            'user' => User::count(),
             'gallery' => Gallery::wherePublished(true)->count(),
             'event' => Event::orderByDesc('created_at')->count(),
             'career' => Career::wherePublished(true)->count(),
