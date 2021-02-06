@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\FacultyController;
 use App\Http\Controllers\Frontend\EventController;
 use App\Http\Controllers\Frontend\OrganizationController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\DynamicPage;
 use App\Http\Controllers\ServiceController;
 
 /*
@@ -34,6 +35,7 @@ Route::resource('/event', EventController::class);
 Route::resource('/about', OrganizationController::class);
 Route::resource('/service', ServiceController::class);
 Route::resource('/contact', ContactController::class);
+Route::resource('/page', DynamicPage::class);
 
 require __DIR__.'/auth.php';
 

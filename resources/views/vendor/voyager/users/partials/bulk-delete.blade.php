@@ -2,6 +2,8 @@
 
 <a class="btn btn-primary" id="bulk_accept_btn"><i class="voyager-check"></i> <span>{{ __('Bulk Accept') }}</span></a>
 
+<a class="btn btn-success" id="bulk_accept_btn"><i class="voyager-move"></i> <span>{{ __('Bulk Import') }}</span></a>
+
 {{-- Bulk delete modal --}}
 <div class="modal modal-danger fade" tabindex="-1" id="bulk_delete_modal" role="dialog">
     <div class="modal-dialog">
@@ -134,5 +136,32 @@ window.addEventListener('DOMContentLoaded', (event) => {
             toastr.warning('{{ __('Tidak ada data yang di pilih') }}');
         }
     })
+
+    // Bulk import
+    $bulkDeleteBtn.click(function () {
+        var $checkedBoxes = $('.dataTable input[type=checkbox]:checked').not('.select_all');
+        var count = $checkedBoxes.length;
+        if (count) {
+            // Reset input value
+            $bulkDeleteInput.val('');
+            // Deletion info
+            var displayName = count > 1 ? '{{ $dataType->getTranslatedAttribute('display_name_plural') }}' : '{{ $dataType->getTranslatedAttribute('display_name_singular') }}';
+            displayName = displayName.toLowerCase();
+            $bulkDeleteCount.html(count);
+            $bulkDeleteDisplayName.html(displayName);
+            // Gather IDs
+            $.each($checkedBoxes, function () {
+                var value = $(this).val();
+                ids.push(value);
+            })
+            // Set input value
+            $bulkDeleteInput.val(ids);
+            // Show modal
+            $bulkDeleteModal.modal('show');
+        } else {
+            // No row selected
+            toastr.warning('{{ __('voyager::generic.bulk_delete_nothing') }}');
+        }
+    });
 })
 </script>

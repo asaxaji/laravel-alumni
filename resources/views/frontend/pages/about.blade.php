@@ -66,7 +66,6 @@
                             <div class="col-lg-3 col-sm-6">
                                 <div class="single-committee-member">
                                     <img src="{{asset('storage/'.$item)}}" class="img-fluid" alt="Committee">
-                                    {{-- <h3>Alex Kalifa <span class="committee-deg">Office Secretary</span></h3> --}}
                                 </div>
                             </div>
                         @empty

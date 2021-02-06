@@ -2,20 +2,19 @@
     <div class="slider-active-wrap owl-carousel text-center text-md-left">
         <!-- Single Slide Item Start -->
         @foreach ($sliders as $sk => $sv)
-            <div class="single-slide-wrap slide-bg-1">
+            <div class="single-slide-wrap" style="background-image: url('{{asset('storage/'.$sv->image)}}')">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-9">
                             <div class="slider-content">
                                 <h2>{{$sv->title}}</h2>
                                 <h3>{{$sv->subtitle}}</h3>
-                                {{-- <h3>Students of <span>Oxfornt University</span></h3> --}}
                                 <p>
                                     {{$sv->excerpt}}
                                 </p>
                                 @if (!empty($sv->link))
                                     <div class="slider-btn">
-                                        <a href="{{$sv->link}}" target="{{isURL($sv->link) ? '_blank' : '_self'}}" class="btn btn-brand smooth-scroll">our mission</a>
+                                        <a href="{{isURL($sv->link) ? $sv->link : route('page.show', $sv->link)}}" target="{{isURL($sv->link) ? '_blank' : '_self'}}" class="btn btn-brand smooth-scroll">detail</a>
                                     </div>
                                 @endif
                             </div>
